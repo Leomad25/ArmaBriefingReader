@@ -1,0 +1,100 @@
+header {
+    width: 100%;
+    border-bottom: 3px double gray;
+}
+
+    header table {
+        width: 100%;
+    }
+
+        header table tr td {
+            width: 100%;
+        }
+
+            header table tr td table {
+                width: 100%;
+            }
+
+                header table tr td table tr .td-logo {
+                    width: 10%;
+                    text-align: center;
+                }
+
+                    header table tr td table tr .td-logo img {
+                        height: 90px;
+                    }
+
+                header table tr td table .td-title {
+                    padding-left: .8em;
+                }
+
+                    header table tr td table .td-title h1 {
+                        font-size: 2em;
+                    }
+
+                    header table tr td table .td-title h2 {
+                        font-size: 1em
+                    }
+
+        header table .tr-nav {
+            height: 40px;
+        }
+
+            header table .tr-nav ul {
+                height: 40px;
+                text-align: right;
+            }
+
+                header table .tr-nav ul li {
+                    transition: all .8s;
+                    height: 100%;
+                    display: inline-block;
+                    position: relative;
+                }
+
+                    header table .tr-nav ul li:hover {
+                        background-color: rgba(180, 180, 180, .2);
+                    }
+
+                    header table .tr-nav ul li p {
+                        position: absolute;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        text-align: center;
+                        width: 100%;
+                    }
+
+                    header table .tr-nav ul li .btn-animation {
+                        position: absolute;
+                        width: 40px;
+                        height: 40px;
+                        left: 10px;
+                        transform: rotate(45deg);
+                        top: 26px;
+                    }
+
+                    header table .tr-nav ul li .btn-nav {
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        cursor: pointer;
+                    }
+
+                header table .tr-nav ul .isSelect {
+                    background-color: white;
+                    color: black;
+                }
+
+                    header table .tr-nav ul .isSelect:hover {
+                        background-color: white;
+                        cursor: default;
+                    }
+
+                    header table .tr-nav ul .isSelect .btn-animation {
+                        background: linear-gradient(
+                            135deg,
+                            rgba(255,255,255,0) 0%,
+                            rgba(255,255,255,0) 50%,
+                            rgba(255,255,255,1) 100%
+                        );
+                    }
