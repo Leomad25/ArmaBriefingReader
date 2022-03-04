@@ -25,10 +25,14 @@ const strings = {
 
     // -------------------------------------------------- web config --------------------------------------------------
     webConfig: {
-        navSize: 160, // recomendado como minimo 70
-        heightMapImages: [720, 0, 0, 0, 0]
+        navSize: 100, // recomendado como minimo 70
+        heightMapImages: [720, 0, 0, 0, 0],
             // importante: - tener la mimsa cantidad de numeros que breafings.
             //             - donde en el brifing no halla la etiquera 'map' dejar el valor como 0.
+        backgroundColor: { // Formato de color -> rojo, verde, azul, tranparencia
+            top: '0, 0, 10, 1', // Degradado superior.
+            bottom: '0, 0, 100, 1' // Degradado inferior.
+        }
     },
 
     // -------------------------------------------------- debrief items --------------------------------------------------

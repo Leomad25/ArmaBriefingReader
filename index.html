@@ -5,17 +5,1001 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LLA Briefing</title>
-    <link rel="stylesheet" href="src/css/master.css">
+    <!-- Style Main -->
+    <style> 
+        * {
+            padding: 0;
+            margin: 0;
+            cursor: default;
+        }
+
+        body {
+            color: white;
+            font-family: 'Times New Roman', Times;
+        }
+
+        .background-color {
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+    </style>
+    <!-- Style Login Form -->
+    <style>
+        .login-form {
+            background-color: rgba(255, 255, 255, .8);
+            width: 400px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            padding: .2em;
+            border-radius: 10px;
+        }
+
+            .login-form .inside {
+                background-color: rgba(0, 0, 0, .8);
+                padding: .5em;
+                border-radius: 10px;
+            }
+
+                .login-form .inside .title {
+                    font-size: 2em;
+                    text-align: center;
+                }
+
+                .login-form .inside .logo {
+                    text-align: center;
+                    padding-top: .5em;
+                    padding-bottom: .5em;
+                }
+
+                    .login-form .inside .logo img {
+                        height: 200px;
+                    }
+                
+                .login-form .inside .inputs {
+                    text-align: center;
+                    padding-top: .5em;
+                    padding-bottom: .5em;
+                }
+
+                    .login-form .inside .inputs .inputs-p {
+                        margin-top: 1em;
+                        width: 100%;
+                        height: 1em;
+                    }
+
+                        .login-form .inside .inputs .inputs-p p {
+                            font-size: 1em;
+                            position: absolute;
+                            cursor: pointer;
+                            left: 50%;
+                            transform: translateX(-50%);
+                        }
+
+                            .login-form .inside .inputs .inputs-p p:hover {
+                                text-decoration: underline;
+                            }
+
+                    .login-form .inside .inputs button {
+                        transition: all .5s;
+                        width: 80%;
+                        padding-top: .5em;
+                        padding-bottom: .5em;
+                        font-size: 1.2em;
+                        border-radius: 25px;
+                        background-color: black;
+                        border: 3px solid white;
+                        color: white;
+                        cursor: pointer;
+                        outline: none;
+                    }
+
+                        .login-form .inside .inputs button:hover {
+                            background-color: white;
+                            border: 3px solid black;
+                            color: black;
+                        }
+
+                    .login-form .inside .inputs .login-input-user,
+                    .login-form .inside .inputs .login-input-pass
+                    {
+                        height: 2em;
+                        margin-top: .2em;
+                        background-color: rgba(255, 255, 255, .5);
+                        border-radius: 25px;
+                        width: 0%;
+                        margin-left: 10%;
+                        text-align: center;
+                        position: relative;
+                    }
+
+                        .login-form .inside .inputs .login-input-user p,
+                        .login-form .inside .inputs .login-input-pass p
+                        {
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translateX(-50%) translateY(-50%);
+                        }
+
+        @keyframes btnVanish {
+            from {opacity: 1;}
+            to {opacity: 0;}
+        }
+
+        @keyframes loginInputsWidth {
+            from {width: 0%;}
+            to {width: 80%;}
+        }
+
+        @keyframes loginVanish {
+            from {opacity: 1}
+            to {opacity: 0}
+        }
+    </style>
+    <!-- Style Top Secret -->
+    <style>
+        .top-secret {
+            display: inline-block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateY(-50%) translateX(-50%);
+            opacity: 0;
+        }
+
+            .top-secret .inside {
+                padding: .5em;
+                border-radius: 1em;
+            }
+
+            .top-secret .grey {
+                background-color: rgb(200,200,200);
+            }
+
+            .top-secret .black {
+                background-color: rgb(100,100,100);
+            }
+
+            .top-secret h1 {
+                font-size: 4em;
+                text-align: center;
+            }
+
+        @keyframes topSecretAppear {
+            from {opacity: 0}
+            to {opacity: 1}
+        }
+
+        @keyframes topSecretDisappear {
+            from {opacity: 1}
+            to {opacity: 0}
+        }
+    </style>
+    <!-- Style Logo -->
+    <style>
+        .image {
+            background-color: white;
+            padding: .5em;
+            display: inline-block;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateY(-50%) translateX(-50%);
+            opacity: 0;
+        }
+
+        @keyframes logoDisappear {
+            from { opacity: 1 }
+            to { opacity: 0 }
+        }
+
+        @keyframes logoAppear {
+            from { opacity: 0 }
+            to { opacity: 1 }
+        }
+    </style>
+    <!-- Style Header 1 -->
+    <style>
+        .header1 {
+            width: 100%;
+            border-bottom: 3px double gray;
+        }
+
+            .header1 table {
+                width: 100%;
+            }
+
+                .header1 table tr td {
+                    width: 100%;
+                }
+
+                    .header1 table tr td table {
+                        width: 100%;
+                    }
+
+                        .header1 table tr td table tr .td-logo {
+                            width: 10%;
+                            text-align: center;
+                        }
+
+                            .header1 table tr td table tr .td-logo img {
+                                height: 90px;
+                            }
+
+                        .header1 table tr td table .td-title {
+                            padding-left: .8em;
+                        }
+
+                            .header1 table tr td table .td-title h1 {
+                                font-size: 2em;
+                            }
+
+                            .header1 table tr td table .td-title h2 {
+                                font-size: 1em
+                            }
+
+                .header1 table .tr-nav {
+                    height: 40px;
+                }
+
+                    .header1 table .tr-nav ul {
+                        height: 40px;
+                        text-align: right;
+                    }
+
+                        .header1 table .tr-nav ul li {
+                            transition: all .8s;
+                            height: 100%;
+                            display: inline-block;
+                            position: relative;
+                        }
+
+                            .header1 table .tr-nav ul li:hover {
+                                background-color: rgba(180, 180, 180, .2);
+                            }
+
+                            .header1 table .tr-nav ul li p {
+                                position: absolute;
+                                top: 50%;
+                                transform: translateY(-50%);
+                                text-align: center;
+                                width: 100%;
+                            }
+
+                            .header1 table .tr-nav ul li .btn-animation {
+                                position: absolute;
+                                width: 40px;
+                                height: 40px;
+                                left: 10px;
+                                transform: rotate(45deg);
+                                top: 26px;
+                            }
+
+                            .header1 table .tr-nav ul li .btn-nav {
+                                position: absolute;
+                                width: 100%;
+                                height: 100%;
+                                cursor: pointer;
+                            }
+
+                        .header1 table .tr-nav ul .isSelect {
+                            background-color: white;
+                            color: black;
+                        }
+
+                            .header1 table .tr-nav ul .isSelect:hover {
+                                background-color: white;
+                                cursor: default;
+                            }
+
+                            .header1 table .tr-nav ul .isSelect .btn-animation {
+                                background: linear-gradient(
+                                    135deg,
+                                    rgba(255,255,255,0) 0%,
+                                    rgba(255,255,255,0) 50%,
+                                    rgba(255,255,255,1) 100%
+                                );
+                            }
+    </style>
+    <!-- Style Header 2 -->
+    <style>
+        .header2 {
+            width: 100%;
+        }
+
+            .header2 table {
+                width: 100%;
+                border-bottom: 3px double gray;
+            }
+
+                .header2 table tr td {
+                    width: 100%;
+                }
+
+                    .header2 table tr td table {
+                        width: 100%;
+                        border-bottom: 0;
+                    }
+
+                        .header2 table tr td table tr .td-logo {
+                            width: 10%;
+                            text-align: center;
+                        }
+
+                            .header2 table tr td table tr .td-logo img {
+                                height: 90px;
+                            }
+
+                        .header2 table tr td table .td-title {
+                            padding-left: .8em;
+                        }
+
+                            .header2 table tr td table .td-title h1 {
+                                font-size: 2em;
+                            }
+
+                            .header2 table tr td table .td-title h2 {
+                                font-size: 1em
+                            }
+                
+                .header2 table .tr-nav {
+                    height: 40px;
+                    text-align: right;
+                }
+
+                    .header2 table .tr-nav button {
+                        height: 40px;
+                        width: 40px;
+                        border: 2px white solid;
+                        border-radius: 5px;
+                        background-color: rgb(0, 0, 200);
+                        cursor: pointer;
+                    }
+
+                        .header2 table .tr-nav button .aside-animation {
+                            position: relative;
+                            width: 100%;
+                            height: 100%;
+                            cursor: pointer;
+                        }
+
+                            .header2 table .tr-nav button .aside-animation #bar-1 {
+                                transition: all 0.5s;
+                                position: absolute;
+                                background-color: rgba(255, 255, 255);
+                                width: 80%;
+                                height: 25%;
+                                top: 33.3%;
+                                left: 50%;
+                                transform: translateX(-50%) translateY(-50%);
+                                cursor: pointer;
+                            }
+
+                            .header2 table .tr-nav button .aside-animation #bar-2 {
+                                transition: all 0.5s;
+                                position: absolute;
+                                background-color: rgba(255, 255, 255);
+                                width: 80%;
+                                height: 25%;
+                                top: 66.6%;
+                                left: 50%;
+                                transform: translateX(-50%) translateY(-50%);
+                                cursor: pointer;
+                            }
+
+        aside {
+            position: absolute;
+            background-color: gray;
+            padding-bottom: 5px;
+            right: 0;
+        }
+
+            aside ul {
+                transition: all 0.5s;
+                padding-left: 0em;
+                padding-right: 0em;
+                list-style: none;
+            }
+
+                aside ul li {
+                    transition: all .5s;
+                    background-color: black;
+                    margin-top: 5px;
+                    height: 40px;
+                    width: 0;
+                    position: relative;
+                }
+
+                    aside ul li p {
+                        display: none;
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translateX(-50%) translateY(-50%);
+                    }
+
+                    aside ul .isSelect p {
+                        z-index: 2;
+                        color: black;
+                        cursor: pointer;
+                    }
+
+                    aside ul li div {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        cursor: pointer;
+                    }
+
+                        aside ul li div:hover {
+                            background-color: rgba(255, 255, 255, .1);
+                        }
+
+                    aside ul .isSelect div {
+                        background-color: white;
+                    }
+
+                        aside ul .isSelect div:hover {
+                            background-color: white;
+                        }
+
+        @keyframes openAsideP {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes closeAsideP {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0;
+            }
+        }
+    </style>
+    <!-- Style Panel -->
+    <style>
+        .panel {
+            margin-top: 35px;
+            width: 90%;
+            margin-left: 5%;
+        }
+
+                .panel .title h1 {
+                    font-size: 2em;
+                }
+
+                .panel .description p {
+                    margin-top: .8em;
+                    font-size: 1em;
+                    text-align: justify;
+                }
+
+                .panel .map {
+                    margin-top: .8em;
+                    width: 100%;
+                    text-align: center;
+                }
+
+                .panel .objectives {
+                    margin-top: .8em;
+                    width: 100%;
+                    background-color: rgba(255, 255, 255, .1);
+                    padding-bottom: .4em;
+                }
+
+                    .panel .objectives h1 {
+                        padding-top: 10px;
+                        padding-left: 10px;
+                        font-size: 2em;
+                    }
+
+                    .panel .objectives .subObj {
+                        background-color: rgba(0, 0, 0, .3);
+                        margin-top: 1em;
+                        width: 96%;
+                        margin-left: 2%;
+                        padding-bottom: 1em;
+                    }
+
+                        .panel .objectives .subObj p {
+                            padding: .4em;
+                            font-size: 1.2em;
+                            text-align: justify;
+                        }
+
+                        .panel .objectives .subObj .subObj-image {
+                            width: 96%;
+                            margin-left: 2%;
+                            padding: 1em 0;
+                            background-color: rgba(0, 0, 0, .2);
+                            overflow-x: auto;
+                            white-space: nowrap;
+                        }
+
+                            .panel .objectives .subObj .subObj-image .image-box {
+                                position: relative;
+                                display: inline-block;
+                            }
+
+                            .panel .objectives .subObj .subObj-image .separator {
+                                width: .5em;
+                                height: 150px;
+                                display: inline-block;
+                            }
+
+                                .panel .objectives .subObj .subObj-image .image-box img {
+                                    height: 150px;
+                                }
+
+                                .panel .objectives .subObj .subObj-image .image-box div {
+                                    position: absolute;
+                                    top: 0;
+                                    left: 0;
+                                    width: 100%;
+                                    height: 150px;
+                                }
+
+                                    .panel .objectives .subObj .subObj-image .image-box div:hover {
+                                        background-color: rgba(0, 0, 0, .5);
+                                    }
+    </style>
 </head>
 <body id="boby">
-    <div class="background-color" style="z-index: -100;"></div>
+    <div id="background-color" class="background-color" style="z-index: -100;"></div>
     <header style="z-index: 100;" id="header"></header>
     <main style="z-index: 0" id="main"></main>
     <footer style="z-index: 100;">
+        <!-- Scripts Strings -->
         <script src="src/string.js"></script>
-        <script src="src/js/init.js"></script>
-        <script src="src/js/animations.js"></script>
-        <script src="src/js/function.js"></script>
+        <!-- Scripts Init -->
+        <script>
+            function getLoginFrom() {
+                let str = '';
+                str += '<div class="login-form" id="login-form"><div class="inside">';
+                str += '<div class="title">' + strings.login.title + '</div>';
+                str += '<div class="logo"><img src="src/img/logo.png"></div>';
+                str += '<div class="inputs" id="inputs">';
+                str += '<button type="button" onclick="animations.login.startSesion()" id="login-btn">' + strings.login.btnLoginTag + '</button>';
+                str += '<div class="inputs-p"><p onclick="func.login.skipToPanel()">' + strings.login.btnSkipToPanel + '</p>'; 
+                str += '</div></div></div></div>';
+                return str;
+            }
+            document.getElementById('main').innerHTML = getLoginFrom();
+            document.getElementById('background-color').style.background = 'linear-gradient(0deg, rgba(' + strings.webConfig.backgroundColor.bottom + ') 0%, rgba(' + strings.webConfig.backgroundColor.top + ') 75%)';
+        </script>
+        <!-- Scripts Animations -->
+        <script>
+            const animations = {
+                login: {
+                    startSesion: () => {
+                        document.getElementById('login-btn').style = 'animation-name: btnVanish; animation-duration: .5s;';
+                        setTimeout(() => {
+                            animationsFun.login.startSecuence();
+                        }, 500);
+                    },
+                    closeLogin: () => {
+                        document.getElementById('login-form').style.animationName = 'loginVanish';
+                        document.getElementById('login-form').style.animationDuration = '.5s';
+                        setTimeout(() => {
+                            document.getElementById('main').innerHTML = animationsFun.topSecret.getHTML();
+                            animationsFun.topSecret.appear();
+                        }, 480);
+                    }
+                },
+                header: {
+                    btnOpenNav: () => {
+                        document.getElementById('bar-1').style.transform = 'translateX(-50%) translateY(-50%) rotate(45deg)';
+                        document.getElementById('bar-1').style.top = '50%';
+                        document.getElementById('bar-1').style.left = '50%'
+                        document.getElementById('bar-2').style.transform = 'translateX(-50%) translateY(-50%) rotate(135deg)';
+                        document.getElementById('bar-2').style.top = '50%';
+                        document.getElementById('bar-2').style.left = '50%';
+                    },
+                    btnCloseNav: () => {
+                        document.getElementById('bar-1').style.transform = 'translateX(-50%) translateY(-50%)';
+                        document.getElementById('bar-1').style.top = '33.3%';
+                        document.getElementById('bar-1').style.left = '50%'
+                        document.getElementById('bar-2').style.transform = 'translateX(-50%) translateY(-50%)';
+                        document.getElementById('bar-2').style.top = '66.6%';
+                        document.getElementById('bar-2').style.left = '50%';
+                    },
+                    openNav: () => {
+                        animations.header.btnOpenNav();
+                        const navList = document.getElementById('nav-list');
+                        navList.style.padding = '0 .5em';
+                        for (let i = 0; i < navList.children.length; i++) {
+                            navList.children[i].style.width = strings.webConfig.navSize + 'px';
+                        }
+                        setTimeout(() => {
+                            for (let i = 0; i < navList.children.length; i++) {
+                                navList.children[i].firstChild.style.animationName = 'openAsideP';
+                                navList.children[i].firstChild.style.animationDuration = '.3s'
+                            }
+                            setTimeout(() => {
+                                for (let i = 0; i < navList.children.length; i++) {
+                                    navList.children[i].firstChild.style.display = 'block';
+                                }
+                            }, 300);
+                        }, 500);
+                    },
+                    closeNav: () => {
+                        animations.header.btnCloseNav();
+                        const navList = document.getElementById('nav-list');
+                        for (let i = 0; i < navList.children.length; i++) {
+                            navList.children[i].firstChild.style.animationName = 'closeAsideP';
+                            navList.children[i].firstChild.style.animationDuration = '.5s'
+                        }
+                        setTimeout(() => {
+                            for (let i = 0; i < navList.children.length; i++) {
+                                navList.children[i].firstChild.style.display = 'none';
+                            }
+                            navList.style.padding = '0 0em';
+                            for (let i = 0; i < navList.children.length; i++) {
+                                navList.children[i].style.width = '0px';
+                            }
+                        }, 480);
+                    }
+                }
+            }
+
+            const animationsFun = {
+                login: {
+                    startSecuence: () => {
+                        document.getElementById('inputs').innerHTML = animationsFun.login.getLabels();
+                        document.getElementById('login-input-user').style = 'animation-name: loginInputsWidth; animation-duration: .5s;';
+                        document.getElementById('login-input-pass').style = 'animation-name: loginInputsWidth; animation-duration: .5s;';
+                        setTimeout(() => {
+                            document.getElementById('login-input-user').style.width = '80%';
+                            document.getElementById('login-input-pass').style.width = '80%';
+                            animationsFun.login.fillUser(0);
+                        }, 500);
+                    },
+                    getLabels: () => {
+                        const str = 
+                            '<div class="login-input-user" id="login-input-user"></div>'+
+                            '<div class="login-input-pass" id="login-input-pass"></div>';
+                        return str;
+                    },
+                    fillUser: (index) => {
+                        if (strings.login.user.length < index) {
+                            document.getElementById('login-input-user').style.backgroundColor = 'rgba(0,200,0,.4)';
+                            return animationsFun.login.fillPass(0);
+                        } else {
+                            document.getElementById('login-input-user').innerHTML = 
+                                '<p>' + strings.login.user.slice(0, index + 1) + '</p>';
+                            setTimeout(() => {
+                                return animationsFun.login.fillUser(index + 1);
+                            }, 80);
+                        }
+                    },
+                    fillPass: (index) => {
+                        if (strings.login.user.length < index) {
+                            document.getElementById('login-input-pass').style.backgroundColor = 'rgba(0,200,0,.4)';
+                            return animations.login.closeLogin();
+                        } else {
+                            document.getElementById('login-input-pass').innerHTML = 
+                                '<p>' + strings.login.pass.slice(0, index + 1) + '</p>';
+                            setTimeout(() => {
+                                return animationsFun.login.fillPass(index + 1);
+                            }, 80);
+                        }
+                    }
+                },
+                topSecret: {
+                    getHTML: () => {
+                        let str = '';
+                        str += '<div class="top-secret inside grey" id="top-secret"><div class="inside black"><div class="inside grey"><div class="inside black">'
+                        str += '<h1>' + strings.topSecret.tag + '</h1>';
+                        return str += '</div></div></div></div>';
+                    },
+                    appear: () => {
+                        document.getElementById('top-secret').style.animationName = 'topSecretAppear';
+                        document.getElementById('top-secret').style.animationDuration = '1s';
+                        setTimeout(() => {
+                            return animationsFun.topSecret.disappear();
+                        }, 1000);
+                    },
+                    disappear: () => {
+                        document.getElementById('top-secret').style.animationName = 'topSecretDisappear';
+                        document.getElementById('top-secret').style.animationDuration = '1s';
+                        setTimeout(() => {
+                            document.getElementById('main').innerHTML = animationsFun.topSecret.getOperationHTML();
+                            animationsFun.topSecret.appearOperation();
+                        }, 1000);
+                    },
+                    getOperationHTML: () => {
+                        let str = '';
+                        str += '<div class="top-secret inside grey" id="top-secret"><div class="inside black"><div class="inside grey"><div class="inside black">'
+                        str += '<h1>' + strings.topSecret.operationName + '</h1>';
+                        return str += '</div></div></div></div>';
+                    },
+                    appearOperation: () => {
+                        document.getElementById('top-secret').style.animationName = 'topSecretAppear';
+                        document.getElementById('top-secret').style.animationDuration = '2s';
+                        setTimeout(() => {
+                            return animationsFun.topSecret.disappearOperation();
+                        }, 2000);
+                    },
+                    disappearOperation: () => {
+                        document.getElementById('top-secret').style.animationName = 'topSecretDisappear';
+                        document.getElementById('top-secret').style.animationDuration = '3s';
+                        setTimeout(() => {
+                            document.getElementById('main').innerHTML = animationsFun.logo.getHTML();
+                            animationsFun.logo.appear();
+                        }, 3000);
+                    }
+                },
+                logo: {
+                    getHTML: () => {
+                        let str = '';
+                        str += '<div class="image" id="image">';
+                        str += '<img src="src/img/logo.png">';
+                        return str += '</div>';
+                    },
+                    appear: () => {
+                        document.getElementById('image').style.animationName = 'logoAppear';
+                        document.getElementById('image').style.animationDuration = '2s';
+                        setTimeout(() => {
+                            return animationsFun.logo.disappear();
+                        }, 2000);
+                    },
+                    disappear: () => {
+                        document.getElementById('image').style.animationName = 'logoDisappear';
+                        document.getElementById('image').style.animationDuration = '3s';
+                        setTimeout(() => {
+                            func.login.skipToPanel();
+                        }, 3000);
+                    }
+                }
+            }
+        </script>
+        <!-- Scripts Functions -->
+        <script>
+            const func = {
+                pageIndex: -1,
+                navAsideState: 0,
+
+                login: {
+                    skipToPanel: () => {
+                        func.header.calculateHeader();
+                        window.addEventListener('resize', () => {
+                            func.header.calculateHeader()
+                        });
+                    }
+                },
+
+                header: {
+                    calculateHeader: () => {
+                        screenWidth = document.getElementById('main').offsetWidth;
+                        navWidth = strings.debrief.length * strings.webConfig.navSize;
+                        if (screenWidth >= navWidth) {
+                            document.getElementById('header').innerHTML = func.header.getHeader();
+                            document.getElementById('header').className = 'header1';
+                        } else {
+                            document.getElementById('header').innerHTML = func.header.getHeader2();
+                            document.getElementById('header').className = 'header2';
+                        }
+                    },
+                    getHeader: () => {
+                        let str =  '' +
+                        '<table>' +
+                            '<tr><td>' +
+                                '<table>' +
+                                    '<tr>' +
+                                        '<td class="td-logo"><img src="src/img/logo.png"></td>' +
+                                        '<td class="td-title">' +
+                                            '<h1>' + strings.header.title + '</h1>' +
+                                            '<h2>' + strings.header.subTitle + '</h2>' +
+                                        '</td>' +
+                                    '</tr>' +
+                                '</table>' +
+                            '</td></tr>' +
+                            '<tr class="tr-nav"><td>' +
+                                '<nav>' +
+                                    '<ul id="nav-list">' + func.header.getNavList() +'</ul>' +
+                                '</nav>' +
+                            '</td></tr>' +
+                        '</table>';
+                        return str;
+                    },
+                    getHeader2:() => {
+                        let str =  '' +
+                        '<table>' +
+                            '<tr><td>' +
+                                '<table>' +
+                                    '<tr>' +
+                                        '<td class="td-logo"><img src="src/img/logo.png"></td>' +
+                                        '<td class="td-title">' +
+                                            '<h1>' + strings.header.title + '</h1>' +
+                                            '<h2>' + strings.header.subTitle + '</h2>' +
+                                        '</td>' +
+                                    '</tr>' +
+                                '</table>' +
+                            '</td></tr>' +
+                            '<tr class="tr-nav"><td>' +
+                                '<nav>' +
+                                    '<button id="btn-nav" onclick="func.panel.changeStateOfAside()">' +
+                                        '<section id="btn-aside-animation" class="aside-animation">' +
+                                            '<section id="bar-1"></section>' +
+                                            '<section id="bar-2"></section>' +
+                                        '</section>' +
+                                    '</button>' +
+                                '</nav>' +
+                            '</td></tr>' +
+                        '</table>' +
+                        '<aside id="aside-list">' +
+                            '<ul id="nav-list">' + func.header.getNavList2() +'</ul>' +
+                        '</aside>';
+                        return str;
+                    },
+                    getNavList: () => {
+                        const debrief = strings.debrief;
+                        if ( debrief.length > 0 ) {
+                            func.pageIndex = 0;
+                            func.panel.loadMain(func.pageIndex);
+                            var str = '', i = 0;
+                            debrief.forEach((element) => {
+                                str += '<li id="nav-item-' + i + '"';
+                                if ( i == 0 ) str += ' class="isSelect"';
+                                str += ' style="width: ' + strings.webConfig.navSize + 'px;"><div class="btn-animation"></div>';
+                                str += '<p>' + element.nav + '</p>';
+                                str += '<div class="btn-nav" onclick="func.header.updateNatList(' + i +')"></div>';
+                                str += '</li>';
+                                i++;
+                            });
+                            return str;
+                        } else {
+                            func.panel.loadMain(-1);
+                            return '<p>No se ha encontrado informacion en el debrifing</p>';
+                        }
+                    },
+                    getNavList2: () => {
+                        const debrief = strings.debrief;
+                        if ( debrief.length > 0 ) {
+                            func.pageIndex = 0;
+                            func.panel.loadMain(func.pageIndex);
+                            var str = '', i = 0;
+                            debrief.forEach((element) => {
+                                str += '<li id="nav-item-' + i + '"';
+                                if ( i == 0 ) str += ' class="isSelect"';
+                                str += '">';
+                                str += '<p>' + element.nav + '</p>';
+                                str += '<div class="btn-nav" onclick="func.header.updateNatList(' + i +')"></div>';
+                                str += '</li>';
+                                i++;
+                            });
+                            return str;
+                        } else {
+                            func.panel.loadMain(-1);
+                            return '<p>No se ha encontrado informacion en el debrifing</p>';
+                        }
+                    },
+                    updateNatList: (index) => {
+                        if ( index != func.pageIndex ) {
+                            func.pageIndex = index;
+                            if (index >= 0 && index < strings.debrief.length) {
+                                for (let i = 0; i < strings.debrief.length; i++) {
+                                    const element = document.getElementById('nav-item-' + i);
+                                    if ( i != index ) {
+                                        element.className = '';
+                                    } else {
+                                        element.className = 'isSelect';
+                                    }
+                                    func.panel.loadMain(func.pageIndex);
+                                }
+                            } else {
+                                updateNatList(0);
+                            }
+                        }
+                    } 
+                },
+
+                panel: {
+                    loadMain: (index) => {
+                        if (index >= 0 && index < strings.debrief.length ) {
+                            document.getElementById('main').innerHTML = func.panel.getContent(index);
+                            document.getElementById('main').className = 'panel';
+                            func.panel.loadPerformance(index);
+                        } else {
+                            document.getElementById('main').innerHTML = 'El index del nav no existe.';
+                        }
+                    },
+                    changeStateOfAside: () => {
+                        if (func.navAsideState == 1) {
+                            const navList = document.getElementById('nav-list');
+                            animations.header.closeNav();
+                            func.navAsideState = 0;
+                            setTimeout(() => {
+                                for (let i = 0; i < navList.children.length; i++) {
+                                    navList.children[i].firstChild.style.display = 'none';
+                                }
+                            }, 1100);
+                        } else if (func.navAsideState == 0) {
+                            animations.header.openNav();
+                            func.navAsideState = 1;
+                        } else {
+                            func.navAsideState = 1;
+                        }
+                    },
+                    getContent: (index) => {
+                        if (index >= 0 && index < strings.debrief.length ) {
+                            const element = strings.debrief[index];
+                            let str = '';
+                            if ( element.title ) str += '<section class="title" id="main-title"><h1>' + element.title + '</h1></section>';
+                            if ( element.description ) str += '<section class="description" id="main-description"><p>' + element.description + '</p></section>';
+                            if ( element.map ) str += '<section class="map" id="main-map"><img src="' + element.map + '"></section>';
+                            if ( element.objectives ) {
+                                str += '<section class="objectives" id="main-objectives">';
+                                str += '<h1>' + strings.panel.objectivesTag + '</h1>';
+                                element.objectives.forEach((subElement) => {
+                                    str += '<section class="subObj">';
+                                    str += '<p>' + subElement.description + '</p>';
+                                    if ( subElement.images ) {
+                                        str += '<ul class="subObj-image">';
+                                        const pathname = window.location.pathname.split('/');
+                                        let newPathname = 'file://';
+                                        for (let i = 0; i < (pathname.length -1); i++) newPathname += pathname[i] + '/';
+                                        str += '<li class="separator"></li>';
+                                        subElement.images.forEach((subImage) => {
+                                            str += '<li class="image-box">';
+                                            str += '<img src="' + subImage + '">';
+                                            str += '<div class="btn-image" onclick="func.panel.openImage(\'' + newPathname + subImage + '\')"></div>';
+                                            str += '</li>';
+                                            str += '<li class="separator"></li>';
+                                        });
+                                        str += '</ul>';
+                                    }
+                                    str += '</section>';
+                                });
+                                str += '</section>';
+                            }
+                            return str;
+                        } else {
+                            return 'El index ingresado no existe.';
+                        }
+                    },
+                    loadPerformance: (index) => {
+                        if (index >= 0 && index < strings.debrief.length) {
+                            if (strings.debrief[index].map) {
+                                // init map image performance.
+                                const map = document.getElementById('main-map').firstChild;
+                                if (strings.debrief.length == strings.webConfig.heightMapImages.length) {
+                                    map.style.maxHeight = strings.webConfig.heightMapImages[index] + 'px';
+                                    map.style.maxWidth = '100%';
+                                } else {
+                                    console.log(
+                                        '> Error:\n' +
+                                        '\tEl tamaño de ( strings.debrief.length ) es de: ' + strings.debrief.length + '.\n' +
+                                        '\tEl tamaño de ( strings.webConfig.heightMapImages.length ) es de: ' + strings.webConfig.heightMapImages.length + '.');
+                                }
+                                // end of map image performance.
+                            }
+                        } else {
+                            console.log(
+                                '> Error:\n' +
+                                '\tEl tamaño del \'index\' de ( func.panel.loadPerformance(index) ) es de: ' + index + '.\n' +
+                                '\tEl tamaño de ( strings.debrief.length ) es de: ' + strings.debrief.length + '.');
+                        }
+                    },
+                    openImage: (url) => {
+                        window.open(url, "Image", "width=1080, height=720");
+                    }
+                }
+            }
+        </script>
     </footer>
 </body>
 </html>
