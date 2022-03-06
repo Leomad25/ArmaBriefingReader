@@ -1,7 +1,3 @@
-package model;
-
-import java.util.List;
-
 /*
  * Copyright (C) 2022 Leonardo Miguel Aguado Diaz
  *
@@ -18,34 +14,17 @@ import java.util.List;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+package model.interfaces;
+
+import javax.swing.JButton;
 
 /**
  *
  * @author Leonardo Miguel Aguado Diaz
  */
-public class Breafing {
-    private String nav, title, description, map;
-    private int heightMapImages = 720;
-    private List<Objetive> objetives;
-    
-    private class Objetive {
-        private String description;
-        private List<String> images;
-
-        public String getDescription() {
-            return description;
-        }
-
-        public void setDescription(String description) {
-            this.description = description;
-        }
-
-        public List<String> getImages() {
-            return images;
-        }
-
-        public void setImages(List<String> images) {
-            this.images = images;
-        }
-    }
+public interface templates {
+   void btnSetConfigurations(JButton btnWriteBriefing);
+   void btnWriteBriefing(JButton btnPreview, JButton btnExport);
+   void btnPreview();
+   void btnExport();
 }

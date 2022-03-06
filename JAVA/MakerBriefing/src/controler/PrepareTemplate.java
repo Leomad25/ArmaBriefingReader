@@ -16,13 +16,25 @@
  */
 package controler;
 
+import javax.swing.JButton;
+import javax.swing.JTextField;
+
 /**
  *
  * @author Leonardo Miguel Aguado Diaz
  */
-public class Main {
-    private view.Main view = new view.Main(this);
+public class PrepareTemplate {
+    private int templateIndex;
+    private view.PrepareTemplate view = new view.PrepareTemplate(this);
+    
+    // Tempates
+    private controler.models.UnitedStatesGovernment controlerUnitedStatesGovernment = new controler.models.UnitedStatesGovernment(this);
 
+    // Methos
+    public PrepareTemplate(int templateIndex) {
+        this.templateIndex = templateIndex;
+    }
+    
     public void setVisible(boolean state) {
         view.setVisible(state);
     }
@@ -30,17 +42,16 @@ public class Main {
     public void centerOnScreen() {
         view.setLocationRelativeTo(null);
     }
-    
-    public void btnCreateNewBreafing(int selectedIndex) {
-        setVisible(false);
-        controler.PrepareTemplate prepareTemplate = new PrepareTemplate(selectedIndex);
-        prepareTemplate.setVisible(true);
-        prepareTemplate.centerOnScreen();
+
+    public void templateLabel(JTextField jTextField1) {
+        String[] labels = {
+            "United States Government"
+        };
+        jTextField1.setText(labels[templateIndex]);
+    }
+
+    public void btnSetConfigurations(JButton btnWriteBriefing) {
+        if (templateIndex == 0) controlerUnitedStatesGovernment.btnSetConfigurations(btnWriteBriefing);
     }
     
-    public static void main(String[] args) {
-        Main main = new Main();
-        main.setVisible(true);
-        main.centerOnScreen();
-    }
 }
