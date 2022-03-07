@@ -14,33 +14,29 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package controler;
+package controller.models.models.UnitedStatesGovernment;
+
+import controller.models.UnitedStatesGovernment;
+import javax.swing.JButton;
 
 /**
  *
  * @author Leonardo Miguel Aguado Diaz
  */
-public class Main {
-    private view.Main view = new view.Main(this);
-
+public class Briefing {
+    private UnitedStatesGovernment controlerMain;
+    private view.models.UnitedStatesGovernment.Briefing view = new view.models.UnitedStatesGovernment.Briefing(this);
+    private JButton btnWriteBriefing;
+    
+    public Briefing (UnitedStatesGovernment controlerMain) {
+        this.controlerMain = controlerMain;
+    }
+    
     public void setVisible(boolean state) {
         view.setVisible(state);
     }
     
     public void centerOnScreen() {
         view.setLocationRelativeTo(null);
-    }
-    
-    public void btnCreateNewBreafing(int selectedIndex) {
-        setVisible(false);
-        controler.PrepareTemplate prepareTemplate = new PrepareTemplate(selectedIndex);
-        prepareTemplate.setVisible(true);
-        prepareTemplate.centerOnScreen();
-    }
-    
-    public static void main(String[] args) {
-        Main main = new Main();
-        main.setVisible(true);
-        main.centerOnScreen();
     }
 }

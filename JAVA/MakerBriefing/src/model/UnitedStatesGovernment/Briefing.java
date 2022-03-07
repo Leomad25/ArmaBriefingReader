@@ -23,7 +23,7 @@ import java.util.List;
  *
  * @author Leonardo Miguel Aguado Diaz
  */
-public class Breafing {
+public class Briefing {
     private String nav, title, description, map;
     private int heightMapImages = 720;
     private List<Objetive> objetives = null;

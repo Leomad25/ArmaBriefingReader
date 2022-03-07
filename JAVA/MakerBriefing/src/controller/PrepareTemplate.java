@@ -14,7 +14,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package controler;
+package controller;
 
 import javax.swing.JButton;
 import javax.swing.JTextField;
@@ -23,12 +23,12 @@ import javax.swing.JTextField;
  *
  * @author Leonardo Miguel Aguado Diaz
  */
-public class PrepareTemplate {
+public class PrepareTemplate implements model.interfaces.templates {
     private int templateIndex;
     private view.PrepareTemplate view = new view.PrepareTemplate(this);
     
     // Tempates
-    private controler.models.UnitedStatesGovernment controlerUnitedStatesGovernment = new controler.models.UnitedStatesGovernment(this);
+    private controller.models.UnitedStatesGovernment controlerUnitedStatesGovernment = new controller.models.UnitedStatesGovernment(this);
 
     // Methos
     public PrepareTemplate(int templateIndex) {
@@ -50,8 +50,25 @@ public class PrepareTemplate {
         jTextField1.setText(labels[templateIndex]);
     }
 
+    @Override
     public void btnSetConfigurations(JButton btnWriteBriefing) {
         if (templateIndex == 0) controlerUnitedStatesGovernment.btnSetConfigurations(btnWriteBriefing);
     }
+
+    @Override
+    public void btnWriteBriefing(JButton btnPreview, JButton btnExport) {
+        if (templateIndex == 0) controlerUnitedStatesGovernment.btnWriteBriefing(btnPreview, btnExport);
+    }
+
+    @Override
+    public void btnPreview() {
+        if (templateIndex == 0) controlerUnitedStatesGovernment.btnPreview();
+    }
+
+    @Override
+    public void btnExport() {
+        if (templateIndex == 0) controlerUnitedStatesGovernment.btnExport();
+    }
+    
     
 }

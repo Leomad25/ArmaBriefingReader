@@ -22,12 +22,12 @@ package view;
  */
 public class Main extends javax.swing.JFrame {
 
-    private controler.Main controler;
+    private controller.Main controller;
     /**
      * Creates new form Main
      */
-    public Main(controler.Main controler) {
-        this.controler = controler;
+    public Main(controller.Main controler) {
+        this.controller = controler;
         initComponents();
     }
 
@@ -118,7 +118,7 @@ public class Main extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        controler.btnCreateNewBreafing(jComboBox1.getSelectedIndex());
+        controller.btnCreateNewBreafing(jComboBox1.getSelectedIndex());
     }//GEN-LAST:event_jButton1ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
