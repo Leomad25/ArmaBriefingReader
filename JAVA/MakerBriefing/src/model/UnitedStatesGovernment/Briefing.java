@@ -80,7 +80,7 @@ public class Briefing {
         return new Objetive();
     }
     
-    private class Objetive {
+    public class Objetive {
         private String description;
         private List<String> images = null;
 

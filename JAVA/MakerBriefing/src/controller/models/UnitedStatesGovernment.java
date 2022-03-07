@@ -20,6 +20,7 @@ import controller.PrepareTemplate;
 import controller.models.models.UnitedStatesGovernment.Briefing;
 import controller.models.models.UnitedStatesGovernment.Configurations;
 import controller.models.models.UnitedStatesGovernment.Preview;
+import java.util.List;
 import javax.swing.JButton;
 
 /**
@@ -33,7 +34,7 @@ public class UnitedStatesGovernment implements model.interfaces.templates {
     private Configurations viewConfigurations = new Configurations(this);
     private Preview viewPreview = new Preview(this);
     // Models
-    private model.UnitedStatesGovernment.Briefing modelBriefing = new model.UnitedStatesGovernment.Briefing();
+    private List<model.UnitedStatesGovernment.Briefing> modelBriefing;
     private model.UnitedStatesGovernment.Configurations modelConfigurations = new model.UnitedStatesGovernment.Configurations();
 
     public UnitedStatesGovernment(PrepareTemplate prepareTemplate) {
@@ -41,7 +42,7 @@ public class UnitedStatesGovernment implements model.interfaces.templates {
         loadDefaultModelConfigurations();
     }
 
-    public model.UnitedStatesGovernment.Briefing getModelBriefing() {
+    public List<model.UnitedStatesGovernment.Briefing> getModelBriefing() {
         return modelBriefing;
     }
 
@@ -79,12 +80,16 @@ public class UnitedStatesGovernment implements model.interfaces.templates {
         prepareTemplate.setVisible(false);
         viewConfigurations.setVisible(true);
         viewConfigurations.centerOnScreen();
-        viewConfigurations.setBtnWriteBriefing(btnWriteBriefing);
+        if (modelConfigurations.getTopSecret().getOperationName() != null && modelConfigurations.getTopSecret().getOperationName().length() > 0) {
+            viewConfigurations.loadModel();
+        } else {
+            viewConfigurations.setBtnWriteBriefing(btnWriteBriefing);
+        }
     }
 
     @Override
     public void btnWriteBriefing(JButton btnPreview, JButton btnExport) {
-        
+        prepareTemplate.setVisible(false);
     }
 
     @Override

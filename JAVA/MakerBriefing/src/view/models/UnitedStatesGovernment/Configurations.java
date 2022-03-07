@@ -126,6 +126,11 @@ public class Configurations extends javax.swing.JFrame {
         jButton2.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
         jButton2.setText("Set Colors");
         jButton2.setEnabled(false);
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jLabel4.setFont(new java.awt.Font("Times New Roman", 2, 18)); // NOI18N
         jLabel4.setText("Top:");
@@ -266,22 +271,47 @@ public class Configurations extends javax.swing.JFrame {
         jTextField2.setEditable(false);
         jTextField2.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jTextField2.setText("null");
+        jTextField2.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jTextField2FocusGained(evt);
+            }
+        });
 
         jTextField3.setEditable(false);
         jTextField3.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jTextField3.setText("null");
+        jTextField3.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jTextField3FocusGained(evt);
+            }
+        });
 
         jTextField4.setEditable(false);
         jTextField4.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jTextField4.setText("null");
+        jTextField4.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jTextField4FocusGained(evt);
+            }
+        });
 
         jTextField5.setEditable(false);
         jTextField5.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jTextField5.setText("null");
+        jTextField5.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jTextField5FocusGained(evt);
+            }
+        });
 
         jTextField6.setEditable(false);
         jTextField6.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jTextField6.setText("null");
+        jTextField6.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jTextField6FocusGained(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -351,10 +381,20 @@ public class Configurations extends javax.swing.JFrame {
         jTextField7.setEditable(false);
         jTextField7.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jTextField7.setText("null");
+        jTextField7.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jTextField7FocusGained(evt);
+            }
+        });
 
         jTextField8.setEditable(false);
         jTextField8.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jTextField8.setText("null");
+        jTextField8.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jTextField8FocusGained(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -405,14 +445,29 @@ public class Configurations extends javax.swing.JFrame {
         jTextField9.setEditable(false);
         jTextField9.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jTextField9.setText("null");
+        jTextField9.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jTextField9FocusGained(evt);
+            }
+        });
 
         jTextField10.setEditable(false);
         jTextField10.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jTextField10.setText("null");
+        jTextField10.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jTextField10FocusGained(evt);
+            }
+        });
 
         jTextField11.setEditable(false);
         jTextField11.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jTextField11.setText("null");
+        jTextField11.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jTextField11FocusGained(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -461,6 +516,11 @@ public class Configurations extends javax.swing.JFrame {
         jButton4.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
         jButton4.setText("Set Labels");
         jButton4.setEnabled(false);
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -508,6 +568,11 @@ public class Configurations extends javax.swing.JFrame {
         jButton5.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
         jButton5.setText("Set Nav Size");
         jButton5.setEnabled(false);
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -585,6 +650,58 @@ public class Configurations extends javax.swing.JFrame {
         controller.btnSetName(jTextField1);
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        controller.btnSetColors(jSpinner1, jSpinner2, jSpinner3, jSpinner4, jSpinner5, jSpinner6);
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        controller.btnSetLabels(jTextField2, jTextField3, jTextField4, jTextField5, jTextField6, jTextField7, jTextField8, jTextField9, jTextField10, jTextField11);
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jTextField2FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField2FocusGained
+        controller.setDefauldColorsToLabes(jTextField2);
+    }//GEN-LAST:event_jTextField2FocusGained
+
+    private void jTextField3FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField3FocusGained
+        controller.setDefauldColorsToLabes(jTextField3);
+    }//GEN-LAST:event_jTextField3FocusGained
+
+    private void jTextField4FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField4FocusGained
+        controller.setDefauldColorsToLabes(jTextField4);
+    }//GEN-LAST:event_jTextField4FocusGained
+
+    private void jTextField5FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField5FocusGained
+        controller.setDefauldColorsToLabes(jTextField5);
+    }//GEN-LAST:event_jTextField5FocusGained
+
+    private void jTextField6FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField6FocusGained
+        controller.setDefauldColorsToLabes(jTextField6);
+    }//GEN-LAST:event_jTextField6FocusGained
+
+    private void jTextField7FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField7FocusGained
+        controller.setDefauldColorsToLabes(jTextField7);
+    }//GEN-LAST:event_jTextField7FocusGained
+
+    private void jTextField8FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField8FocusGained
+        controller.setDefauldColorsToLabes(jTextField8);
+    }//GEN-LAST:event_jTextField8FocusGained
+
+    private void jTextField9FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField9FocusGained
+        controller.setDefauldColorsToLabes(jTextField9);
+    }//GEN-LAST:event_jTextField9FocusGained
+
+    private void jTextField10FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField10FocusGained
+        controller.setDefauldColorsToLabes(jTextField10);
+    }//GEN-LAST:event_jTextField10FocusGained
+
+    private void jTextField11FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField11FocusGained
+        controller.setDefauldColorsToLabes(jTextField11);
+    }//GEN-LAST:event_jTextField11FocusGained
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        controller.btnSetNavSize(jSpinner7);
+    }//GEN-LAST:event_jButton5ActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
@@ -645,6 +762,8 @@ public class Configurations extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     public void loadModelCofigurations(model.UnitedStatesGovernment.Configurations modelConfigurations) {
+        // mission name
+        if (modelConfigurations.getTopSecret().getOperationName().length() > 0) jTextField1.setText(modelConfigurations.getTopSecret().getOperationName());
         // Colors configs
         jSpinner1.setValue(modelConfigurations.getBackgroundColorTop().getRed());
         jSpinner2.setValue(modelConfigurations.getBackgroundColorTop().getGreen());
