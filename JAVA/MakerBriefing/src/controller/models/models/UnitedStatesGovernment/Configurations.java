@@ -54,6 +54,7 @@ public class Configurations {
     public void btnSetName(JTextField textField) {
         if (textField.getText() != null && textField.getText().length() > 0) {
             controllerMain.loadConfig_missionName(textField.getText());
+            view.loadModelCofigurations(controllerMain.getModelConfigurations());
         } else {
             JOptionPane.showMessageDialog(view, "First write the mission's name.", "Error.", JOptionPane.ERROR_MESSAGE);
         }

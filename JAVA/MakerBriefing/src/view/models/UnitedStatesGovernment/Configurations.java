@@ -643,4 +643,52 @@ public class Configurations extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
     // End of variables declaration//GEN-END:variables
+
+    public void loadModelCofigurations(model.UnitedStatesGovernment.Configurations modelConfigurations) {
+        // Colors configs
+        jSpinner1.setValue(modelConfigurations.getBackgroundColorTop().getRed());
+        jSpinner2.setValue(modelConfigurations.getBackgroundColorTop().getGreen());
+        jSpinner3.setValue(modelConfigurations.getBackgroundColorTop().getBlue());
+        jSpinner4.setValue(modelConfigurations.getBackgroundColorBottom().getRed());
+        jSpinner5.setValue(modelConfigurations.getBackgroundColorBottom().getGreen());
+        jSpinner6.setValue(modelConfigurations.getBackgroundColorBottom().getBlue());
+        jSpinner1.setEnabled(true);
+        jSpinner2.setEnabled(true);
+        jSpinner3.setEnabled(true);
+        jSpinner4.setEnabled(true);
+        jSpinner5.setEnabled(true);
+        jSpinner6.setEnabled(true);
+        //btn set colors
+        jButton2.setEnabled(true);
+        // Login Form
+        jTextField2.setText(modelConfigurations.getLoginForm().getTitle());
+        jTextField2.setEditable(true);
+        jTextField3.setText(modelConfigurations.getLoginForm().getBtnLoginTag());
+        jTextField3.setEditable(true);
+        jTextField4.setText(modelConfigurations.getLoginForm().getBtnSkipToPanel());
+        jTextField4.setEditable(true);
+        jTextField5.setText(modelConfigurations.getLoginForm().getUser());
+        jTextField5.setEditable(true);
+        jTextField6.setText(modelConfigurations.getLoginForm().getPass());
+        jTextField6.setEditable(true);
+        // Top Secret
+        jTextField7.setText(modelConfigurations.getTopSecret().getTag());
+        jTextField7.setEditable(true);
+        jTextField8.setText(modelConfigurations.getTopSecret().getOperationName());
+        jTextField8.setEditable(true);
+        // Webs Tags
+        jTextField9.setText(modelConfigurations.getWebTags().getHeaderTitle());
+        jTextField9.setEditable(true);
+        jTextField10.setText(modelConfigurations.getWebTags().getHeaderSubTitle());
+        jTextField10.setEditable(true);
+        jTextField11.setText(modelConfigurations.getWebTags().getPanelObjectiveTag());
+        jTextField11.setEditable(true);
+        // btn of Labels
+        jButton4.setEnabled(true);
+        // Nav Size Tags
+        jSpinner7.setValue(modelConfigurations.getNavSize());
+        jSpinner7.setEnabled(true);
+        // btn Nav Size
+        jButton5.setEnabled(true);
+    }
 }

@@ -38,10 +38,40 @@ public class UnitedStatesGovernment implements model.interfaces.templates {
 
     public UnitedStatesGovernment(PrepareTemplate prepareTemplate) {
         this.prepareTemplate =  prepareTemplate;
+        loadDefaultModelConfigurations();
+    }
+
+    public model.UnitedStatesGovernment.Briefing getModelBriefing() {
+        return modelBriefing;
+    }
+
+    public model.UnitedStatesGovernment.Configurations getModelConfigurations() {
+        return modelConfigurations;
     }
     
     public PrepareTemplate getPrepareTemplate () {
         return prepareTemplate;
+    }
+    
+    private void loadDefaultModelConfigurations() {
+        // Login From
+        modelConfigurations.getLoginForm().setTitle("Red Lobo Blanco");
+        modelConfigurations.getLoginForm().setBtnLoginTag("Iniciar sesión");
+        modelConfigurations.getLoginForm().setBtnSkipToPanel("Ir al panel");
+        modelConfigurations.getLoginForm().setUser("Lobo Blanco");
+        modelConfigurations.getLoginForm().setPass("Destacamento");
+        // Top Secret
+        modelConfigurations.getTopSecret().setTag("Top Secret");
+        // Tag webs
+        modelConfigurations.getWebTags().setHeaderTitle("Lobo Blanco - Brief");
+        modelConfigurations.getWebTags().setPanelObjectiveTag("Objetivos");
+        // Nav size tags
+        modelConfigurations.setNavSize(90);
+        // background Color
+        modelConfigurations.getBackgroundColorTop().setBlue(10);
+        modelConfigurations.getBackgroundColorTop().setAlpha(1);
+        modelConfigurations.getBackgroundColorBottom().setBlue(100);
+        modelConfigurations.getBackgroundColorBottom().setAlpha(1);
     }
 
     @Override
@@ -68,6 +98,7 @@ public class UnitedStatesGovernment implements model.interfaces.templates {
     }
 
     public void loadConfig_missionName(String text) {
-        System.out.println("test to load");
+        modelConfigurations.getTopSecret().setOperationName(text);
+        modelConfigurations.getWebTags().setHeaderSubTitle(text);
     }
 }

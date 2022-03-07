@@ -24,7 +24,7 @@ public class Configurations {
     private final LoginForm loginForm = new LoginForm();
     private final TopSecret topSecret = new TopSecret();
     private final WebTags webTags = new WebTags();
-    private int navSize = 90;
+    private int navSize = 0;
     private final rgbColor backgroundColorTop = new rgbColor();
     private final rgbColor backgroundColorBottom = new rgbColor();
 
@@ -56,7 +56,7 @@ public class Configurations {
         return backgroundColorBottom;
     }
     
-    private class rgbColor {
+    public class rgbColor {
         private int red = 0;
         private int green = 0;
         private int blue = 0;
@@ -100,7 +100,7 @@ public class Configurations {
         }
     }
     
-    private class LoginForm {
+    public class LoginForm {
         private String title, btnLoginTag, btnSkipToPanel, user, pass;
 
         public String getTitle() {
@@ -144,7 +144,7 @@ public class Configurations {
         }
     }
     
-    private class TopSecret {
+    public class TopSecret {
         private String tag, operationName;
 
         public String getTag() {
@@ -164,7 +164,7 @@ public class Configurations {
         }
     }
     
-    private class WebTags {
+    public class WebTags {
         private String headerTitle, headerSubTitle, panelObjectiveTag;
 
         public String getHeaderTitle() {
