@@ -24,7 +24,7 @@ import javax.swing.JButton;
  */
 public interface templates {
    void btnSetConfigurations(JButton btnWriteBriefing);
-   void btnWriteBriefing(JButton btnPreview, JButton btnExport);
+   void btnWriteBriefing();
    void btnPreview();
    void btnExport();
 }

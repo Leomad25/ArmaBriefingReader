@@ -41,4 +41,44 @@ public class Briefing {
     public void loadBriefing(int pos) {
         view.loadBriefing(controlerMain.getModelBriefing(), pos);
     }
+
+    public void btnBackToPanel() {
+        view.setVisible(false);
+        controlerMain.getPrepareTemplate().setVisible(true);
+        controlerMain.exportVerification();
+    }
+
+    public void btnPrevious(int pos) {
+        view.loadBriefing(controlerMain.getModelBriefing(), (pos - 2));
+    }
+
+    public void btnNext(int pos) {
+        if (pos == controlerMain.getModelBriefing().size()) {
+            controlerMain.getModelBriefing().add(new model.UnitedStatesGovernment.Briefing());
+            view.loadBriefing(controlerMain.getModelBriefing(), (controlerMain.getModelBriefing().size() - 1));
+        } else {
+            view.loadBriefing(controlerMain.getModelBriefing(), pos);
+        }
+    }
+
+    public void btnEliminate(int pos) {
+        controlerMain.getModelBriefing().remove(pos);
+        if (controlerMain.getModelBriefing().isEmpty()) {
+            btnBackToPanel();
+        } else {
+            if (pos == controlerMain.getModelBriefing().size()) {
+                view.loadBriefing(controlerMain.getModelBriefing(), (pos - 1));
+            } else {
+                view.loadBriefing(controlerMain.getModelBriefing(), pos);
+            }
+        }
+    }
+
+    public void btnSave(int pos) {
+        if (view.getjTextField3().getText() != null && view.getjTextField3().getText().length() > 0) 
+            controlerMain.getModelBriefing().get(pos).setNav(view.getjTextField3().getText());
+        if (view.getjTextField4().getText() != null && view.getjTextField4().getText().length() > 0) 
+            controlerMain.getModelBriefing().get(pos).setTitle(view.getjTextField4().getText());
+        view.loadBriefing(controlerMain.getModelBriefing(), pos);
+    }
 }

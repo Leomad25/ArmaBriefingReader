@@ -88,7 +88,7 @@ public class UnitedStatesGovernment implements model.interfaces.templates {
     }
 
     @Override
-    public void btnWriteBriefing(JButton btnPreview, JButton btnExport) {
+    public void btnWriteBriefing() {
         prepareTemplate.setVisible(false);
         viewBriefing.setVisible(true);
         viewBriefing.centerOnScreen();
@@ -97,7 +97,7 @@ public class UnitedStatesGovernment implements model.interfaces.templates {
         }
         viewBriefing.loadBriefing(0);
     }
-
+    
     @Override
     public void btnPreview() {
         
@@ -111,5 +111,15 @@ public class UnitedStatesGovernment implements model.interfaces.templates {
     public void loadConfig_missionName(String text) {
         modelConfigurations.getTopSecret().setOperationName(text);
         modelConfigurations.getWebTags().setHeaderSubTitle(text);
+    }
+    
+    public void exportVerification() {
+        if (!modelBriefing.isEmpty()) {
+            prepareTemplate.getBtnPreview().setEnabled(true);
+            prepareTemplate.getBtnExport().setEnabled(true);
+        } else {
+            prepareTemplate.getBtnPreview().setEnabled(false);
+            prepareTemplate.getBtnExport().setEnabled(false);
+        }
     }
 }

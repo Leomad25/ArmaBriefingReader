@@ -31,10 +31,10 @@ public class Briefing {
     private File map = null;
     private Description description = new Description();
     private int heightMapImages = 0;
-    private ArrayList<Objetive> objetives = new ArrayList<Objetive>();
+    private ArrayList<Objective> objetives = new ArrayList<Objective>();
     
-    public Objetive createObjetive() {
-        return new Objetive();
+    public Objective createObjetive() {
+        return new Objective();
     }
 
     public String getNav() {
@@ -72,12 +72,12 @@ public class Briefing {
     public void setHeightMapImages(int heightMapImages) {
         this.heightMapImages = heightMapImages;
     }
-
-    public void addObjetives(Objetive obj) {
-        objetives.add(obj);
+    
+    public ArrayList<Objective> getObjectives () {
+        return objetives;
     }
     
-    public class Objetive {
+    public class Objective {
         private String description = null;
         private ArrayList<File> images = new ArrayList<File>();
 
