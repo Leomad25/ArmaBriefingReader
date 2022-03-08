@@ -39,4 +39,7 @@ public class Briefing {
     public void centerOnScreen() {
         view.setLocationRelativeTo(null);
     }
+
+    public void loadBriefing(int i) {
+    }
 }

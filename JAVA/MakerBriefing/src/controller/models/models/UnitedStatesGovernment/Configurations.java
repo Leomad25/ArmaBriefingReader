@@ -64,7 +64,10 @@ public class Configurations {
             btnWriteBriefing.setEnabled(true);
         } else {
             JOptionPane.showMessageDialog(view, "First write the mission's name.", "Error.", JOptionPane.ERROR_MESSAGE);
-            if (controllerMain.getModelConfigurations().getTopSecret().getOperationName().length() > 0) {
+            if (
+                    (controllerMain.getModelConfigurations().getTopSecret().getOperationName() != null) &&
+                    (controllerMain.getModelConfigurations().getTopSecret().getOperationName().length() > 0)
+                ) {
                 view.loadModelCofigurations(controllerMain.getModelConfigurations());
             }
         }

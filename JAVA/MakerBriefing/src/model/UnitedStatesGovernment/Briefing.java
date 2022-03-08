@@ -1,6 +1,7 @@
 package model.UnitedStatesGovernment;
 
-import java.util.List;
+import java.io.File;
+import java.util.ArrayList;
 
 /*
  * Copyright (C) 2022 Leonardo Miguel Aguado Diaz
@@ -24,9 +25,17 @@ import java.util.List;
  * @author Leonardo Miguel Aguado Diaz
  */
 public class Briefing {
-    private String nav, title, description, map;
-    private int heightMapImages = 720;
-    private List<Objetive> objetives = null;
+    private String 
+            nav = null,
+            title = null;
+    private File map = null;
+    private Description description = new Description();
+    private int heightMapImages = 0;
+    private ArrayList<Objetive> objetives = new ArrayList<Objetive>();
+    
+    public Objetive createObjetive() {
+        return new Objetive();
+    }
 
     public String getNav() {
         return nav;
@@ -44,20 +53,16 @@ public class Briefing {
         this.title = title;
     }
 
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public String getMap() {
+    public File getMap() {
         return map;
     }
 
-    public void setMap(String map) {
+    public void setMap(File map) {
         this.map = map;
+    }
+
+    public Description getDescription() {
+        return description;
     }
 
     public int getHeightMapImages() {
@@ -68,21 +73,13 @@ public class Briefing {
         this.heightMapImages = heightMapImages;
     }
 
-    public List<Objetive> getObjetives() {
-        return objetives;
-    }
-
-    public void setObjetives(Objetive objetive) {
-        objetives.add(objetive);
-    }
-    
-    public Objetive createObjetive() {
-        return new Objetive();
+    public void addObjetives(Objetive obj) {
+        objetives.add(obj);
     }
     
     public class Objetive {
-        private String description;
-        private List<String> images = null;
+        private String description = null;
+        private ArrayList<File> images = new ArrayList<File>();
 
         public String getDescription() {
             return description;
@@ -92,12 +89,51 @@ public class Briefing {
             this.description = description;
         }
 
-        public List<String> getImages() {
+        public ArrayList<File> getImages() {
             return images;
         }
 
-        public void addImages(String route) {
-            images.add(route);
+        public void addImages(File file) {
+            images.add(file);
+        }
+    }
+    
+    public class Description {
+        private String time = null;
+        private String receiver = null;
+        private String sender = null;
+        private String description = null;
+
+        public String getTime() {
+            return time;
+        }
+
+        public void setTime(String time) {
+            this.time = time;
+        }
+
+        public String getReceiver() {
+            return receiver;
+        }
+
+        public void setReceiver(String receiver) {
+            this.receiver = receiver;
+        }
+
+        public String getSender() {
+            return sender;
+        }
+
+        public void setSender(String sender) {
+            this.sender = sender;
+        }
+
+        public String getDescription() {
+            return description;
+        }
+
+        public void setDescription(String description) {
+            this.description = description;
         }
     }
 }
