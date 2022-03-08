@@ -17,16 +17,14 @@
 package controller.models.models.UnitedStatesGovernment;
 
 import controller.models.UnitedStatesGovernment;
-import javax.swing.JButton;
 
 /**
  *
  * @author Leonardo Miguel Aguado Diaz
  */
 public class Briefing {
-    private UnitedStatesGovernment controlerMain;
-    private view.models.UnitedStatesGovernment.Briefing view = new view.models.UnitedStatesGovernment.Briefing(this);
-    private JButton btnWriteBriefing;
+    private final UnitedStatesGovernment controlerMain;
+    private final view.models.UnitedStatesGovernment.Briefing view = new view.models.UnitedStatesGovernment.Briefing(this);
     
     public Briefing (UnitedStatesGovernment controlerMain) {
         this.controlerMain = controlerMain;
@@ -40,6 +38,7 @@ public class Briefing {
         view.setLocationRelativeTo(null);
     }
 
-    public void loadBriefing(int i) {
+    public void loadBriefing(int pos) {
+        view.loadBriefing(controlerMain.getModelBriefing(), pos);
     }
 }

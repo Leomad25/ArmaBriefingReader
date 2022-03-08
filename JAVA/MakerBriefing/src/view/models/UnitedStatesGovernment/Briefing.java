@@ -16,6 +16,8 @@
  */
 package view.models.UnitedStatesGovernment;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Leonardo Miguel Aguado Diaz
@@ -93,6 +95,7 @@ public class Briefing extends javax.swing.JFrame {
 
         jTextField1.setEditable(false);
         jTextField1.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField1.setText("jTextField1");
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 2, 18)); // NOI18N
@@ -101,6 +104,7 @@ public class Briefing extends javax.swing.JFrame {
 
         jTextField2.setEditable(false);
         jTextField2.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        jTextField2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField2.setText("jTextField2");
 
         jLabel4.setFont(new java.awt.Font("Times New Roman", 2, 18)); // NOI18N
@@ -324,10 +328,9 @@ public class Briefing extends javax.swing.JFrame {
 
         jButton4.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
         jButton4.setText("Previous");
-        jButton4.setEnabled(false);
 
         jButton5.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
-        jButton5.setText("Add new");
+        jButton5.setText("Next");
 
         jButton6.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
         jButton6.setText("Save change");
@@ -337,7 +340,6 @@ public class Briefing extends javax.swing.JFrame {
 
         jButton8.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
         jButton8.setText("Eliminate");
-        jButton8.setEnabled(false);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -399,10 +401,11 @@ public class Briefing extends javax.swing.JFrame {
                     .addComponent(jButton6)
                     .addComponent(jButton8))
                 .addGap(6, 6, 6)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5)
-                    .addComponent(jCheckBox1))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel5)
+                        .addComponent(jCheckBox1)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -459,4 +462,10 @@ public class Briefing extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
     // End of variables declaration//GEN-END:variables
+    
+    public void loadBriefing(ArrayList<model.UnitedStatesGovernment.Briefing> arraylist, int pos){
+        jTextField1.setText(String.valueOf(pos + 1));
+        jTextField2.setText(String.valueOf(arraylist.size()));
+    }
+
 }
