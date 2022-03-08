@@ -57,7 +57,6 @@ public class Briefing extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jTextField5 = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
         jCheckBox2 = new javax.swing.JCheckBox();
         jPanel2 = new javax.swing.JPanel();
@@ -127,6 +126,11 @@ public class Briefing extends javax.swing.JFrame {
 
         jButton1.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
         jButton1.setText("Select image");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jLabel6.setFont(new java.awt.Font("Times New Roman", 2, 18)); // NOI18N
         jLabel6.setText("Max. Heigh:");
@@ -134,15 +138,17 @@ public class Briefing extends javax.swing.JFrame {
         jTextField5.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jTextField5.setText("jTextField5");
 
-        jButton2.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
-        jButton2.setText("Save image");
-
         jLabel7.setFont(new java.awt.Font("Times New Roman", 2, 18)); // NOI18N
         jLabel7.setText("jLabel7");
 
         jCheckBox2.setFont(new java.awt.Font("Times New Roman", 2, 14)); // NOI18N
         jCheckBox2.setText("Is enable");
         jCheckBox2.setEnabled(false);
+        jCheckBox2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -152,17 +158,15 @@ public class Briefing extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 475, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jCheckBox2))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addGap(133, 133, 133)
                         .addComponent(jLabel6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField5)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton2)))
+                        .addComponent(jTextField5))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 475, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jCheckBox2)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -172,8 +176,7 @@ public class Briefing extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(jLabel6)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2))
+                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
@@ -211,18 +214,38 @@ public class Briefing extends javax.swing.JFrame {
         jCheckBox3.setFont(new java.awt.Font("Times New Roman", 2, 14)); // NOI18N
         jCheckBox3.setText("Is enable");
         jCheckBox3.setEnabled(false);
+        jCheckBox3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox3ActionPerformed(evt);
+            }
+        });
 
         jCheckBox4.setFont(new java.awt.Font("Times New Roman", 2, 14)); // NOI18N
         jCheckBox4.setText("Is enable");
         jCheckBox4.setEnabled(false);
+        jCheckBox4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox4ActionPerformed(evt);
+            }
+        });
 
         jCheckBox5.setFont(new java.awt.Font("Times New Roman", 2, 14)); // NOI18N
         jCheckBox5.setText("Is enable");
         jCheckBox5.setEnabled(false);
+        jCheckBox5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox5ActionPerformed(evt);
+            }
+        });
 
         jCheckBox6.setFont(new java.awt.Font("Times New Roman", 2, 14)); // NOI18N
         jCheckBox6.setText("Is enable");
         jCheckBox6.setEnabled(false);
+        jCheckBox6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox6ActionPerformed(evt);
+            }
+        });
 
         jTextArea1.setColumns(20);
         jTextArea1.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
@@ -292,6 +315,11 @@ public class Briefing extends javax.swing.JFrame {
         jCheckBox1.setFont(new java.awt.Font("Times New Roman", 2, 14)); // NOI18N
         jCheckBox1.setText("Is enable");
         jCheckBox1.setEnabled(false);
+        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox1ActionPerformed(evt);
+            }
+        });
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Objectives"));
 
@@ -304,6 +332,11 @@ public class Briefing extends javax.swing.JFrame {
 
         jButton3.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
         jButton3.setText("Inspect objectives");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -390,7 +423,7 @@ public class Briefing extends javax.swing.JFrame {
                         .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel4)
@@ -468,9 +501,40 @@ public class Briefing extends javax.swing.JFrame {
         controller.btnSave(Integer.parseInt(jTextField1.getText()) - 1);
     }//GEN-LAST:event_jButton6ActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        controller.btnSelectImage(Integer.parseInt(jTextField1.getText()) - 1);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+        controller.btnCheck_title(Integer.parseInt(jTextField1.getText()) - 1);
+    }//GEN-LAST:event_jCheckBox1ActionPerformed
+
+    private void jCheckBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox2ActionPerformed
+        controller.btnCheck_map(Integer.parseInt(jTextField1.getText()) - 1);
+    }//GEN-LAST:event_jCheckBox2ActionPerformed
+
+    private void jCheckBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox3ActionPerformed
+        controller.btnCheck_time(Integer.parseInt(jTextField1.getText()) - 1);
+    }//GEN-LAST:event_jCheckBox3ActionPerformed
+
+    private void jCheckBox4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox4ActionPerformed
+        controller.btnCheck_receiver(Integer.parseInt(jTextField1.getText()) - 1);
+    }//GEN-LAST:event_jCheckBox4ActionPerformed
+
+    private void jCheckBox5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox5ActionPerformed
+        controller.btnCheck_sender(Integer.parseInt(jTextField1.getText()) - 1);
+    }//GEN-LAST:event_jCheckBox5ActionPerformed
+
+    private void jCheckBox6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox6ActionPerformed
+        controller.btnCheck_description(Integer.parseInt(jTextField1.getText()) - 1);
+    }//GEN-LAST:event_jCheckBox6ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        controller.btnInspectObjectives(Integer.parseInt(jTextField1.getText()) - 1);
+    }//GEN-LAST:event_jButton3ActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
@@ -518,12 +582,26 @@ public class Briefing extends javax.swing.JFrame {
         if (pos == (arraylist.size() - 1)) jButton5.setText("Add briefing");
         if (pos < (arraylist.size() - 1)) jButton5.setText("Next");
         if (arraylist.get(pos).getNav() != null) { jTextField3.setText(arraylist.get(pos).getNav()); } else jTextField3.setText("");
-        if (arraylist.get(pos).getTitle() != null) { jTextField4.setText(arraylist.get(pos).getTitle()); jCheckBox1.setEnabled(true); jCheckBox1.setSelected(true); } else jTextField4.setText("");
-        if (arraylist.get(pos).getMap() != null) {} else { jTextField5.setText(String.valueOf(0)); jTextField5.setEditable(false); jLabel7.setText("Image not selected."); jButton2.setEnabled(false); }
-        if (arraylist.get(pos).getDescription().getTime() != null) {} else jTextField6.setText("");
-        if (arraylist.get(pos).getDescription().getReceiver() != null) {} else jTextField7.setText("");
-        if (arraylist.get(pos).getDescription().getSender() != null) {} else jTextField8.setText("");
-        if (arraylist.get(pos).getDescription().getDescription() != null) {} else jTextArea1.setText("");
+        if (arraylist.get(pos).getTitle() != null) { jTextField4.setText(arraylist.get(pos).getTitle()); jCheckBox1.setEnabled(true); jCheckBox1.setSelected(true); } else { jTextField4.setText(""); jCheckBox1.setEnabled(false); jCheckBox1.setSelected(false); }
+        if (arraylist.get(pos).getMap() != null) {
+            jButton1.setEnabled(false);
+            jTextField5.setText(String.valueOf(arraylist.get(pos).getHeightMapImages()));
+            jTextField5.setEditable(true);
+            jLabel7.setText(arraylist.get(pos).getMap().getName());
+            jCheckBox2.setEnabled(true);
+            jCheckBox2.setSelected(true);
+        } else {
+            jButton1.setEnabled(true);
+            jTextField5.setText(String.valueOf(0));
+            jTextField5.setEditable(false);
+            jLabel7.setText("Image not selected.");
+            jCheckBox2.setEnabled(false);
+            jCheckBox2.setSelected(false);
+        }
+        if (arraylist.get(pos).getDescription().getTime() != null) { jTextField6.setText(arraylist.get(pos).getDescription().getTime()); jCheckBox3.setEnabled(true); jCheckBox3.setSelected(true); } else { jTextField6.setText(""); jCheckBox3.setEnabled(false); jCheckBox3.setSelected(false); }
+        if (arraylist.get(pos).getDescription().getReceiver() != null) { jTextField7.setText(arraylist.get(pos).getDescription().getReceiver()); jCheckBox4.setEnabled(true); jCheckBox4.setSelected(true); } else { jTextField7.setText(""); jCheckBox4.setEnabled(false); jCheckBox4.setSelected(false); }
+        if (arraylist.get(pos).getDescription().getSender() != null) { jTextField8.setText(arraylist.get(pos).getDescription().getSender()); jCheckBox5.setEnabled(true); jCheckBox5.setSelected(true); } else { jTextField8.setText(""); jCheckBox5.setEnabled(false); jCheckBox5.setSelected(false); }
+        if (arraylist.get(pos).getDescription().getDescription() != null) { jTextArea1.setText(arraylist.get(pos).getDescription().getDescription()); jCheckBox6.setEnabled(true); jCheckBox6.setSelected(true); } else { jTextArea1.setText(""); jCheckBox6.setEnabled(false); jCheckBox6.setSelected(false); }
         jTextField9.setText(String.valueOf(arraylist.get(pos).getObjectives().size()));
     }
 

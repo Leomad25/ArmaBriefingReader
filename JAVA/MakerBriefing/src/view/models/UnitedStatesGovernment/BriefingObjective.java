@@ -65,11 +65,9 @@ public class BriefingObjective extends javax.swing.JFrame {
 
         jButton1.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
         jButton1.setText("Previous");
-        jButton1.setEnabled(false);
 
         jButton2.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
         jButton2.setText("Delete");
-        jButton2.setEnabled(false);
 
         jButton4.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
         jButton4.setText("Next");
@@ -93,7 +91,6 @@ public class BriefingObjective extends javax.swing.JFrame {
 
         jButton7.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
         jButton7.setText("Delete image");
-        jButton7.setEnabled(false);
 
         jButton8.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
         jButton8.setText("Back to panel");
