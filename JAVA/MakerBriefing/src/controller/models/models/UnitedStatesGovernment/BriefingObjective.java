@@ -25,7 +25,7 @@ import model.UnitedStatesGovernment.Briefing;
  */
 public class BriefingObjective {
     private controller.models.models.UnitedStatesGovernment.Briefing controllerBriefing;
-    private view.models.UnitedStatesGovernment.BriefingObjective view = new view.models.UnitedStatesGovernment.BriefingObjective();
+    private view.models.UnitedStatesGovernment.BriefingObjective view = new view.models.UnitedStatesGovernment.BriefingObjective(this);
 
     BriefingObjective(controller.models.models.UnitedStatesGovernment.Briefing controllerBriefing) {
         this.controllerBriefing = controllerBriefing;
@@ -38,7 +38,44 @@ public class BriefingObjective {
     void centerOnWindow(view.models.UnitedStatesGovernment.Briefing view) {
         this.view.setLocationRelativeTo(view);
     }
-    void loadObjective(ArrayList<Briefing.Objective> objectives, int i) {
     
+    void loadObjective(ArrayList<Briefing.Objective> objectives, int pos) {
+        view.loadObjective(objectives, pos);
+    }
+    
+    public void loadBriefingIndex(int pos) {
+        view.loadBriefingIndex(pos);
+    }
+
+    public void btnBackToPanel() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public void btnPrevious() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public void btnDelete() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public void btnNext() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public void btnSave() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public void btnAddImage() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public void btnDeleteImage(int selectedIndex) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public void selectedImage() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }

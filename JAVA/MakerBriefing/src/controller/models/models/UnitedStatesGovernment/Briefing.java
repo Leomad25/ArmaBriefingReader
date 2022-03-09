@@ -28,12 +28,12 @@ import javax.swing.filechooser.FileNameExtensionFilter;
  * @author Leonardo Miguel Aguado Diaz
  */
 public class Briefing {
-    private final UnitedStatesGovernment controlerMain;
+    private final UnitedStatesGovernment controllerMain;
     private final view.models.UnitedStatesGovernment.Briefing view = new view.models.UnitedStatesGovernment.Briefing(this);
     private final controller.models.models.UnitedStatesGovernment.BriefingObjective controllerObjective = new controller.models.models.UnitedStatesGovernment.BriefingObjective(this);
     
     public Briefing (UnitedStatesGovernment controlerMain) {
-        this.controlerMain = controlerMain;
+        this.controllerMain = controlerMain;
     }
     
     public void setVisible(boolean state) {
@@ -45,55 +45,56 @@ public class Briefing {
     }
 
     public void loadBriefing(int pos) {
-        view.loadBriefing(controlerMain.getModelBriefing(), pos);
+        view.loadBriefing(controllerMain.getModelBriefing(), pos);
     }
 
     public void btnBackToPanel() {
         view.setVisible(false);
-        controlerMain.getPrepareTemplate().setVisible(true);
-        controlerMain.exportVerification();
+        controllerObjective.setVisible(false);
+        controllerMain.getPrepareTemplate().setVisible(true);
+        controllerMain.exportVerification();
     }
 
     public void btnPrevious(int pos) {
-        view.loadBriefing(controlerMain.getModelBriefing(), (pos - 2));
+        view.loadBriefing(controllerMain.getModelBriefing(), (pos - 2));
     }
 
     public void btnNext(int pos) {
-        if (pos == controlerMain.getModelBriefing().size()) {
-            controlerMain.getModelBriefing().add(new model.UnitedStatesGovernment.Briefing());
-            view.loadBriefing(controlerMain.getModelBriefing(), (controlerMain.getModelBriefing().size() - 1));
+        if (pos == controllerMain.getModelBriefing().size()) {
+            controllerMain.getModelBriefing().add(new model.UnitedStatesGovernment.Briefing());
+            view.loadBriefing(controllerMain.getModelBriefing(), (controllerMain.getModelBriefing().size() - 1));
         } else {
-            view.loadBriefing(controlerMain.getModelBriefing(), pos);
+            view.loadBriefing(controllerMain.getModelBriefing(), pos);
         }
     }
 
     public void btnEliminate(int pos) {
-        controlerMain.getModelBriefing().remove(pos);
-        if (controlerMain.getModelBriefing().isEmpty()) {
+        controllerMain.getModelBriefing().remove(pos);
+        if (controllerMain.getModelBriefing().isEmpty()) {
             btnBackToPanel();
         } else {
-            if (pos == controlerMain.getModelBriefing().size()) {
-                view.loadBriefing(controlerMain.getModelBriefing(), (pos - 1));
+            if (pos == controllerMain.getModelBriefing().size()) {
+                view.loadBriefing(controllerMain.getModelBriefing(), (pos - 1));
             } else {
-                view.loadBriefing(controlerMain.getModelBriefing(), pos);
+                view.loadBriefing(controllerMain.getModelBriefing(), pos);
             }
         }
     }
 
     public void btnSave(int pos) {
         if (view.getjTextField3().getText() != null && view.getjTextField3().getText().length() > 0) 
-            controlerMain.getModelBriefing().get(pos).setNav(view.getjTextField3().getText());
+            controllerMain.getModelBriefing().get(pos).setNav(view.getjTextField3().getText());
         if (view.getjTextField4().getText() != null && view.getjTextField4().getText().length() > 0) 
-            controlerMain.getModelBriefing().get(pos).setTitle(view.getjTextField4().getText());
+            controllerMain.getModelBriefing().get(pos).setTitle(view.getjTextField4().getText());
         if (view.getjTextField6().getText() != null && view.getjTextField6().getText().length() > 0) 
-            controlerMain.getModelBriefing().get(pos).getDescription().setTime(view.getjTextField6().getText());
+            controllerMain.getModelBriefing().get(pos).getDescription().setTime(view.getjTextField6().getText());
         if (view.getjTextField7().getText() != null && view.getjTextField7().getText().length() > 0) 
-            controlerMain.getModelBriefing().get(pos).getDescription().setReceiver(view.getjTextField7().getText());
+            controllerMain.getModelBriefing().get(pos).getDescription().setReceiver(view.getjTextField7().getText());
         if (view.getjTextField8().getText() != null && view.getjTextField8().getText().length() > 0) 
-            controlerMain.getModelBriefing().get(pos).getDescription().setSender(view.getjTextField8().getText());
+            controllerMain.getModelBriefing().get(pos).getDescription().setSender(view.getjTextField8().getText());
         if (view.getjTextArea1().getText() != null && view.getjTextArea1().getText().length() > 0)
-            controlerMain.getModelBriefing().get(pos).getDescription().setDescription(view.getjTextArea1().getText());
-        view.loadBriefing(controlerMain.getModelBriefing(), pos);
+            controllerMain.getModelBriefing().get(pos).getDescription().setDescription(view.getjTextArea1().getText());
+        view.loadBriefing(controllerMain.getModelBriefing(), pos);
     }
 
     public void btnSelectImage(int pos) {
@@ -104,46 +105,51 @@ public class Briefing {
         int selecction = fileChooser.showOpenDialog(view);
         if (selecction == JFileChooser.APPROVE_OPTION) {
             File file = fileChooser.getSelectedFile();
-            controlerMain.getModelBriefing().get(pos).setMap(file);
-            controlerMain.getModelBriefing().get(pos).setHeightMapImages(720);
+            controllerMain.getModelBriefing().get(pos).setMap(file);
+            controllerMain.getModelBriefing().get(pos).setHeightMapImages(720);
             btnSave(pos);
-            view.loadBriefing(controlerMain.getModelBriefing(), pos);
+            view.loadBriefing(controllerMain.getModelBriefing(), pos);
         }
     }
 
     public void btnCheck_title(int pos) {
-        controlerMain.getModelBriefing().get(pos).setTitle(null);
-        view.loadBriefing(controlerMain.getModelBriefing(), pos);
+        controllerMain.getModelBriefing().get(pos).setTitle(null);
+        view.loadBriefing(controllerMain.getModelBriefing(), pos);
     }
 
     public void btnCheck_map(int pos) {
-        controlerMain.getModelBriefing().get(pos).setMap(null);
-        view.loadBriefing(controlerMain.getModelBriefing(), pos);
+        controllerMain.getModelBriefing().get(pos).setMap(null);
+        view.loadBriefing(controllerMain.getModelBriefing(), pos);
     }
 
     public void btnCheck_time(int pos) {
-        controlerMain.getModelBriefing().get(pos).getDescription().setTime(null);
-        view.loadBriefing(controlerMain.getModelBriefing(), pos);
+        controllerMain.getModelBriefing().get(pos).getDescription().setTime(null);
+        view.loadBriefing(controllerMain.getModelBriefing(), pos);
     }
 
     public void btnCheck_receiver(int pos) {
-        controlerMain.getModelBriefing().get(pos).getDescription().setReceiver(null);
-        view.loadBriefing(controlerMain.getModelBriefing(), pos);
+        controllerMain.getModelBriefing().get(pos).getDescription().setReceiver(null);
+        view.loadBriefing(controllerMain.getModelBriefing(), pos);
     }
 
     public void btnCheck_sender(int pos) {
-        controlerMain.getModelBriefing().get(pos).getDescription().setSender(null);
-        view.loadBriefing(controlerMain.getModelBriefing(), pos);
+        controllerMain.getModelBriefing().get(pos).getDescription().setSender(null);
+        view.loadBriefing(controllerMain.getModelBriefing(), pos);
     }
 
     public void btnCheck_description(int pos) {
-        controlerMain.getModelBriefing().get(pos).getDescription().setDescription(null);
-        view.loadBriefing(controlerMain.getModelBriefing(), pos);
+        controllerMain.getModelBriefing().get(pos).getDescription().setDescription(null);
+        view.loadBriefing(controllerMain.getModelBriefing(), pos);
     }
 
     public void btnInspectObjectives(int pos) {
+        btnSave(pos);
         controllerObjective.setVisible(true);
         controllerObjective.centerOnWindow(view);
-        controllerObjective.loadObjective(controlerMain.getModelBriefing().get(0).getObjectives(), 0);
+        if (controllerMain.getModelBriefing().get(pos).getObjectives().isEmpty())
+            controllerMain.getModelBriefing().get(pos).getObjectives().add(controllerMain.getModelBriefing().get(pos).createObjetive());
+        controllerObjective.loadObjective(controllerMain.getModelBriefing().get(pos).getObjectives(), 0);
+        controllerObjective.loadBriefingIndex(pos + 1);
+        loadBriefing(pos);
     }
 }
