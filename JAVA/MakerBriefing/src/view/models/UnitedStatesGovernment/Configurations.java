@@ -98,7 +98,7 @@ public class Configurations extends javax.swing.JFrame {
         jButton5 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Breafing Maker Tool - Configurations");
+        setTitle("Briefing Maker Tool - Configurations");
         setResizable(false);
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 3, 36)); // NOI18N

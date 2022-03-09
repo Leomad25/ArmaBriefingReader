@@ -48,6 +48,10 @@ public class Briefing {
         view.loadBriefing(controllerMain.getModelBriefing(), pos);
     }
 
+    public UnitedStatesGovernment getControllerMain() {
+        return controllerMain;
+    }
+
     public void btnBackToPanel() {
         view.setVisible(false);
         controllerObjective.setVisible(false);
@@ -149,7 +153,7 @@ public class Briefing {
         if (controllerMain.getModelBriefing().get(pos).getObjectives().isEmpty())
             controllerMain.getModelBriefing().get(pos).getObjectives().add(controllerMain.getModelBriefing().get(pos).createObjetive());
         controllerObjective.loadObjective(controllerMain.getModelBriefing().get(pos).getObjectives(), 0);
-        controllerObjective.loadBriefingIndex(pos + 1);
+        controllerObjective.loadBriefingIndex(pos);
         loadBriefing(pos);
     }
 }

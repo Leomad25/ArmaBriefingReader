@@ -47,7 +47,7 @@ public class Main extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Breafing Maker Tool - Home");
+        setTitle("Briefing Maker Tool - Home");
         setResizable(false);
 
         jComboBox1.setFont(new java.awt.Font("Times New Roman", 2, 18)); // NOI18N
@@ -63,7 +63,7 @@ public class Main extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 3, 36)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Breafing Maker Tool");
+        jLabel1.setText("Briefing Maker Tool");
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 2, 14)); // NOI18N
         jLabel2.setText("select a template:");
