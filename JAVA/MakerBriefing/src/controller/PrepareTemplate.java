@@ -56,8 +56,8 @@ public class PrepareTemplate implements model.interfaces.templates {
     }
 
     @Override
-    public void btnWriteBriefing(JButton btnPreview, JButton btnExport) {
-        if (templateIndex == 0) controlerUnitedStatesGovernment.btnWriteBriefing(btnPreview, btnExport);
+    public void btnWriteBriefing() {
+        if (templateIndex == 0) controlerUnitedStatesGovernment.btnWriteBriefing();
     }
 
     @Override
@@ -70,5 +70,11 @@ public class PrepareTemplate implements model.interfaces.templates {
         if (templateIndex == 0) controlerUnitedStatesGovernment.btnExport();
     }
     
+    public JButton getBtnPreview() {
+        return view.getjButton3();
+    }
     
+    public JButton getBtnExport() {
+        return view.getjButton4();
+    }
 }

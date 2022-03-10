@@ -16,6 +16,8 @@
  */
 package view;
 
+import javax.swing.JButton;
+
 /**
  *
  * @author Leonardo Miguel Aguado Diaz
@@ -50,7 +52,7 @@ public class PrepareTemplate extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Breafing Maker Tool - Template");
+        setTitle("Briefing Maker Tool - Template");
         setResizable(false);
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 3, 36)); // NOI18N
@@ -157,7 +159,7 @@ public class PrepareTemplate extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        controller.btnWriteBriefing(jButton3, jButton4);
+        controller.btnWriteBriefing();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -177,4 +179,12 @@ public class PrepareTemplate extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
+
+    public JButton getjButton3() {
+        return jButton3;
+    }
+
+    public JButton getjButton4() {
+        return jButton4;
+    }
 }
