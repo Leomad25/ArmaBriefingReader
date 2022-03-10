@@ -100,7 +100,9 @@ public class UnitedStatesGovernment implements model.interfaces.templates {
     
     @Override
     public void btnPreview() {
-        
+        prepareTemplate.setVisible(false);
+        viewPreview.setVisible(true);
+        viewPreview.centerOnScreen();
     }
 
     @Override

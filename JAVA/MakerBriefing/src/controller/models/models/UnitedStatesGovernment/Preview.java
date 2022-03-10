@@ -24,8 +24,17 @@ import controller.models.UnitedStatesGovernment;
  */
 public class Preview {
     private UnitedStatesGovernment controlerMain;
+    private view.models.UnitedStatesGovernment.Preview view = new view.models.UnitedStatesGovernment.Preview(this);
     
     public Preview(UnitedStatesGovernment controlerMain) {
+        this.controlerMain = controlerMain;
+    }
+
+    public void setVisible(boolean state) {
+        view.setVisible(state);
     }
     
+    public void centerOnScreen() {
+        view.setLocationRelativeTo(null);
+    }
 }
