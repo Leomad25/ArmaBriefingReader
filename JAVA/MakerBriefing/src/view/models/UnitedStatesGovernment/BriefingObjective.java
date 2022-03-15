@@ -71,6 +71,7 @@ public class BriefingObjective extends javax.swing.JFrame {
 
         setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
         setTitle("Briefing Maker Tool - Objectives");
+        setIconImage(templates.TemplatesManager.getLogoImageIcon30().getImage());
         setResizable(false);
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 3, 36)); // NOI18N

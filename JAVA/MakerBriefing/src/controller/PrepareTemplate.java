@@ -17,6 +17,7 @@
 package controller;
 
 import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JTextField;
 
 /**
@@ -76,5 +77,9 @@ public class PrepareTemplate implements model.interfaces.templates {
     
     public JButton getBtnExport() {
         return view.getjButton4();
+    }
+    
+    public JFrame getView() {
+        return view;
     }
 }

@@ -53,6 +53,7 @@ public class PrepareTemplate extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Briefing Maker Tool - Template");
+        setIconImage(templates.TemplatesManager.getLogoImageIcon30().getImage());
         setResizable(false);
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 3, 36)); // NOI18N

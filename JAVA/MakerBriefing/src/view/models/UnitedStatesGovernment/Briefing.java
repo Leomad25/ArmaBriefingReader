@@ -86,6 +86,7 @@ public class Briefing extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Briefing Maker Tool - Briefing");
+        setIconImage(templates.TemplatesManager.getLogoImageIcon30().getImage());
         setResizable(false);
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 3, 36)); // NOI18N
@@ -138,6 +139,11 @@ public class Briefing extends javax.swing.JFrame {
 
         jTextField5.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jTextField5.setText("jTextField5");
+        jTextField5.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField5KeyTyped(evt);
+            }
+        });
 
         jLabel7.setFont(new java.awt.Font("Times New Roman", 2, 18)); // NOI18N
         jLabel7.setText("jLabel7");
@@ -534,6 +540,16 @@ public class Briefing extends javax.swing.JFrame {
         controller.btnInspectObjectives(Integer.parseInt(jTextField1.getText()) - 1);
     }//GEN-LAST:event_jButton3ActionPerformed
 
+    private void jTextField5KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField5KeyTyped
+        String[] numbers = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "0"};
+        String insert = String.valueOf(evt.getKeyChar());
+        boolean verify = false;
+        for (int i = 0; i < numbers.length; i++) {
+            if (insert.equals(numbers[i])) {verify = true; break;}
+        }
+        if (!verify) evt.consume();
+    }//GEN-LAST:event_jTextField5KeyTyped
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton3;
@@ -616,6 +632,10 @@ public class Briefing extends javax.swing.JFrame {
 
     public JTextField getjTextField4() {
         return jTextField4;
+    }
+
+    public JTextField getjTextField5() {
+        return jTextField5;
     }
 
     public JTextField getjTextField6() {
