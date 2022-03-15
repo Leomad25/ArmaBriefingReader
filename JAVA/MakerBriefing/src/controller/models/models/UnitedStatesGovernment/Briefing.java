@@ -56,7 +56,7 @@ public class Briefing {
         view.setVisible(false);
         controllerObjective.setVisible(false);
         controllerMain.getPrepareTemplate().setVisible(true);
-        controllerMain.exportVerification();
+        controllerMain.fixBriefing();
     }
 
     public void btnPrevious(int pos) {
@@ -98,6 +98,8 @@ public class Briefing {
             controllerMain.getModelBriefing().get(pos).getDescription().setSender(view.getjTextField8().getText());
         if (view.getjTextArea1().getText() != null && view.getjTextArea1().getText().length() > 0)
             controllerMain.getModelBriefing().get(pos).getDescription().setDescription(view.getjTextArea1().getText());
+        if (controllerMain.getModelBriefing().get(pos).getMap() != null && view.getjTextField5().getText() != null && view.getjTextField5().getText().length() > 0)
+            controllerMain.getModelBriefing().get(pos).setHeightMapImages(Integer.parseInt(view.getjTextField5().getText()));
         view.loadBriefing(controllerMain.getModelBriefing(), pos);
     }
 
@@ -110,7 +112,7 @@ public class Briefing {
         if (selecction == JFileChooser.APPROVE_OPTION) {
             File file = fileChooser.getSelectedFile();
             controllerMain.getModelBriefing().get(pos).setMap(file);
-            controllerMain.getModelBriefing().get(pos).setHeightMapImages(720);
+            view.getjTextField5().setText("720");
             btnSave(pos);
             view.loadBriefing(controllerMain.getModelBriefing(), pos);
         }

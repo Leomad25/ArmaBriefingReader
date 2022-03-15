@@ -48,6 +48,7 @@ public class Main extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Briefing Maker Tool - Home");
+        setIconImage(templates.TemplatesManager.getLogoImageIcon30().getImage());
         setResizable(false);
 
         jComboBox1.setFont(new java.awt.Font("Times New Roman", 2, 18)); // NOI18N

@@ -17,6 +17,9 @@
 package controller.models.models.UnitedStatesGovernment;
 
 import controller.models.UnitedStatesGovernment;
+import java.util.ArrayList;
+import model.UnitedStatesGovernment.Briefing;
+import model.UnitedStatesGovernment.Configurations;
 
 /**
  *
@@ -36,5 +39,58 @@ public class Preview {
     
     public void centerOnScreen() {
         view.setLocationRelativeTo(null);
+    }
+
+    public void btnBackToPanel() {
+        view.setVisible(false);
+        controlerMain.getPrepareTemplate().setVisible(true);
+    }
+
+    public void btnExport() {
+        btnBackToPanel();
+        controlerMain.startExport();
+    }
+
+    public void btnConfigurationsEdit() {
+        view.setVisible(false);
+        controlerMain.getViewConfigurations().setVisible(true);
+    }
+
+    public void btnBriefingEdit(int pos) {
+        view.setVisible(false);
+        controlerMain.getViewBriefing().setVisible(true);
+        controlerMain.getViewBriefing().loadBriefing(pos);
+    }
+
+    public void btnBriefingPrevious(int pos) {
+        view.loadBriefing(controlerMain.getModelBriefing(), (pos - 1));
+        view.loadObjective(controlerMain.getModelBriefing().get(pos - 1).getObjectives(), 0);
+    }
+
+    public void btnBriefingNext(int pos) {
+        view.loadBriefing(controlerMain.getModelBriefing(), (pos + 1));
+        view.loadObjective(controlerMain.getModelBriefing().get(pos + 1).getObjectives(), 0);
+    }
+
+    public void btnBriefingObjectivePrevious(int pos, int pos2) {
+        view.loadObjective(controlerMain.getModelBriefing().get(pos).getObjectives(), pos2 - 1);
+    }
+
+    public void btnBriefingObjectiveNext(int pos, int pos2) {
+        view.loadObjective(controlerMain.getModelBriefing().get(pos).getObjectives(), pos2 + 1);
+    }
+    
+    public void loadExport() {
+        view.loadExport(controlerMain.isExportEnable());
+    }
+    
+    public void loadConfigurations(Configurations modelConfigurations, ArrayList<Briefing> modelBriefing) {
+        view.loadConfigurations(modelConfigurations, modelBriefing);
+        loadExport();
+    }
+
+    public void loadBriefing(ArrayList<Briefing> modelBriefing, int pos) {
+        view.loadBriefing(modelBriefing, pos);
+        view.loadObjective(modelBriefing.get(pos).getObjectives(), 0);
     }
 }
