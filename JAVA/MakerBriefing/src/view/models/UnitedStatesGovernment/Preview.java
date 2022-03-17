@@ -1220,6 +1220,9 @@ public class Preview extends javax.swing.JFrame {
                 DefaultListModel model = new DefaultListModel();
                 for (int i = 0; i < objectives.get(pos).getImages().size(); i++) model.addElement(objectives.get(pos).getImages().get(i).getName());
                 jList1.setModel(model);
+            } else {
+                DefaultListModel model = new DefaultListModel();
+                jList1.setModel(model);
             }
         }
     }
@@ -1233,7 +1236,6 @@ public class Preview extends javax.swing.JFrame {
                 char c3 = text.charAt(i + 2);
                 char c4 = text.charAt(i + 3);
                 if (c1 == '<' && c2 == 'b' && c3 == 'r' && c4 == '>') {
-                    str += '\n';
                     str += "<br>";
                     str += '\n';
                     i = i + 3;

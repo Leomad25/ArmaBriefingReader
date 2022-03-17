@@ -659,7 +659,6 @@ public class Briefing extends javax.swing.JFrame {
                 char c3 = text.charAt(i + 2);
                 char c4 = text.charAt(i + 3);
                 if (c1 == '<' && c2 == 'b' && c3 == 'r' && c4 == '>') {
-                    str += '\n';
                     str += "<br>";
                     str += '\n';
                     i = i + 3;

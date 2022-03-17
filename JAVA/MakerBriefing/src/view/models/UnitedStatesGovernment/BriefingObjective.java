@@ -344,7 +344,7 @@ public class BriefingObjective extends javax.swing.JFrame {
         jTextField1.setText(String.valueOf(pos + 1));
         jTextField2.setText(String.valueOf(objectives.size()));
         jTextField3.setText(String.valueOf(objectives.get(pos).getImages().size()));
-        if (objectives.get(pos).getDescription() != null) { jTextArea1.setText(objectives.get(pos).getDescription()); } else jTextArea1.setText("");
+        if (objectives.get(pos).getDescription() != null) { jTextArea1.setText(addLineBreak(objectives.get(pos).getDescription())); } else jTextArea1.setText("");
         DefaultListModel model = new DefaultListModel();
         if (!objectives.get(pos).getImages().isEmpty()) {
             objectives.get(pos).getImages().forEach((element) -> {
@@ -357,5 +357,25 @@ public class BriefingObjective extends javax.swing.JFrame {
     
     public void loadBriefingIndex(int pos) {
         jTextField4.setText(String.valueOf(pos));
+    }
+    
+    private String addLineBreak(String text) {
+        String str = "";
+        for (int i = 0; i < text.length(); i++) {
+            if (i < text.length() - 4) {
+                char c1 = text.charAt(i);
+                char c2 = text.charAt(i + 1);
+                char c3 = text.charAt(i + 2);
+                char c4 = text.charAt(i + 3);
+                if (c1 == '<' && c2 == 'b' && c3 == 'r' && c4 == '>') {
+                    str += "<br>";
+                    str += '\n';
+                    i = i + 3;
+                    continue;
+                }
+            }
+            str += text.charAt(i);
+        }
+        return str;
     }
 }

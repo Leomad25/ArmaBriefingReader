@@ -94,7 +94,7 @@ public class BriefingObjective {
 
     public void btnSave(int pos, JTextArea textArea, JButton buttom) {
         if (buttom.isEnabled()) {
-            controllerBriefing.getControllerMain().getModelBriefing().get(briefingIndex).getObjectives().get(pos).setDescription(textArea.getText());
+            controllerBriefing.getControllerMain().getModelBriefing().get(briefingIndex).getObjectives().get(pos).setDescription(removeLineBreak(textArea.getText()));
             loadObjective(controllerBriefing.getControllerMain().getModelBriefing().get(briefingIndex).getObjectives(), pos);
         }
     }
@@ -136,5 +136,14 @@ public class BriefingObjective {
             }
         }
         buttom.setEnabled(false);
+    }
+    
+    private String removeLineBreak(String text) {
+        String str = "";
+        for (int i = 0; i < text.length(); i++) {
+            char c = text.charAt(i);
+            if (c != '\n') str += c;
+        }
+        return str;
     }
 }
