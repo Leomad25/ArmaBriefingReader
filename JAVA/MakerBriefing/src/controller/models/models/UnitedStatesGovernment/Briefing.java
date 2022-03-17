@@ -97,7 +97,7 @@ public class Briefing {
         if (view.getjTextField8().getText() != null && view.getjTextField8().getText().length() > 0) 
             controllerMain.getModelBriefing().get(pos).getDescription().setSender(view.getjTextField8().getText());
         if (view.getjTextArea1().getText() != null && view.getjTextArea1().getText().length() > 0)
-            controllerMain.getModelBriefing().get(pos).getDescription().setDescription(view.getjTextArea1().getText());
+            controllerMain.getModelBriefing().get(pos).getDescription().setDescription(removeLineBreak(view.getjTextArea1().getText()));
         if (controllerMain.getModelBriefing().get(pos).getMap() != null && view.getjTextField5().getText() != null && view.getjTextField5().getText().length() > 0)
             controllerMain.getModelBriefing().get(pos).setHeightMapImages(Integer.parseInt(view.getjTextField5().getText()));
         view.loadBriefing(controllerMain.getModelBriefing(), pos);
@@ -157,5 +157,14 @@ public class Briefing {
         controllerObjective.loadObjective(controllerMain.getModelBriefing().get(pos).getObjectives(), 0);
         controllerObjective.loadBriefingIndex(pos);
         loadBriefing(pos);
+    }
+
+    private String removeLineBreak(String text) {
+        String str = "";
+        for (int i = 0; i < text.length(); i++) {
+            char c = text.charAt(i);
+            if (c != '\n') str += c;
+        }
+        return str;
     }
 }

@@ -618,7 +618,7 @@ public class Briefing extends javax.swing.JFrame {
         if (arraylist.get(pos).getDescription().getTime() != null) { jTextField6.setText(arraylist.get(pos).getDescription().getTime()); jCheckBox3.setEnabled(true); jCheckBox3.setSelected(true); } else { jTextField6.setText(""); jCheckBox3.setEnabled(false); jCheckBox3.setSelected(false); }
         if (arraylist.get(pos).getDescription().getReceiver() != null) { jTextField7.setText(arraylist.get(pos).getDescription().getReceiver()); jCheckBox4.setEnabled(true); jCheckBox4.setSelected(true); } else { jTextField7.setText(""); jCheckBox4.setEnabled(false); jCheckBox4.setSelected(false); }
         if (arraylist.get(pos).getDescription().getSender() != null) { jTextField8.setText(arraylist.get(pos).getDescription().getSender()); jCheckBox5.setEnabled(true); jCheckBox5.setSelected(true); } else { jTextField8.setText(""); jCheckBox5.setEnabled(false); jCheckBox5.setSelected(false); }
-        if (arraylist.get(pos).getDescription().getDescription() != null) { jTextArea1.setText(arraylist.get(pos).getDescription().getDescription()); jCheckBox6.setEnabled(true); jCheckBox6.setSelected(true); } else { jTextArea1.setText(""); jCheckBox6.setEnabled(false); jCheckBox6.setSelected(false); }
+        if (arraylist.get(pos).getDescription().getDescription() != null) { jTextArea1.setText(addLineBreak(arraylist.get(pos).getDescription().getDescription())); jCheckBox6.setEnabled(true); jCheckBox6.setSelected(true); } else { jTextArea1.setText(""); jCheckBox6.setEnabled(false); jCheckBox6.setSelected(false); }
         jTextField9.setText(String.valueOf(arraylist.get(pos).getObjectives().size()));
     }
 
@@ -648,5 +648,26 @@ public class Briefing extends javax.swing.JFrame {
 
     public JTextField getjTextField8() {
         return jTextField8;
+    }
+    
+    private String addLineBreak(String text) {
+        String str = "";
+        for (int i = 0; i < text.length(); i++) {
+            if (i < text.length() - 4) {
+                char c1 = text.charAt(i);
+                char c2 = text.charAt(i + 1);
+                char c3 = text.charAt(i + 2);
+                char c4 = text.charAt(i + 3);
+                if (c1 == '<' && c2 == 'b' && c3 == 'r' && c4 == '>') {
+                    str += '\n';
+                    str += "<br>";
+                    str += '\n';
+                    i = i + 3;
+                    continue;
+                }
+            }
+            str += text.charAt(i);
+        }
+        return str;
     }
 }

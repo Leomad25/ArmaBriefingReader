@@ -27,10 +27,13 @@ import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.OutputStream;
 import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import templates.TemplatesManager;
@@ -320,8 +323,8 @@ public class UnitedStatesGovernment implements model.interfaces.templates {
                         }
                     if (i == modelBriefing.size() - 1) {str+="\n\t}\n";} else {str += "\n\t},\n";}
                 }
-                str += "]\n";
-            printWriter.print(str + "};");
+                str += "]\n};";
+            printWriter.print(str);
             // end to create string
             printWriter.close();
             fileWriter.close();

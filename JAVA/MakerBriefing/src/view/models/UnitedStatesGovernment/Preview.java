@@ -1174,7 +1174,7 @@ public class Preview extends javax.swing.JFrame {
             // description
             strDescription += "<b><i>Descripción:</i></b><br>";
             if(modelBriefing.get(pos).getDescription().getDescription() != null) {
-                strDescription += "<div style=\"margin-left: 20px;\">" + modelBriefing.get(pos).getDescription().getDescription() + "</div>";
+                strDescription += "<div style=\"margin-left: 20px;\">" + addLineBreak(modelBriefing.get(pos).getDescription().getDescription()) + "</div>";
             } else {
                 strDescription += "<div style=\"margin-left: 20px; color: red;\"><i>not added</i></div>";
             }
@@ -1222,5 +1222,26 @@ public class Preview extends javax.swing.JFrame {
                 jList1.setModel(model);
             }
         }
+    }
+
+    private String addLineBreak(String text) {
+        String str = "";
+        for (int i = 0; i < text.length(); i++) {
+            if (i < text.length() - 4) {
+                char c1 = text.charAt(i);
+                char c2 = text.charAt(i + 1);
+                char c3 = text.charAt(i + 2);
+                char c4 = text.charAt(i + 3);
+                if (c1 == '<' && c2 == 'b' && c3 == 'r' && c4 == '>') {
+                    str += '\n';
+                    str += "<br>";
+                    str += '\n';
+                    i = i + 3;
+                    continue;
+                }
+            }
+            str += text.charAt(i);
+        }
+        return str;
     }
 }
